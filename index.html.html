@@ -1,0 +1,3487 @@
+<html>
+<style>
+  :root {
+    --table-width: 16%;
+    --table-height: 9%;
+  }
+.div-1 {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  width: var(--table-width);
+  height: var(--table-height);
+  background: #DDB78A;
+  border: 1px solid #d3d3d3;
+  display: flex;
+  border: 4px solid #8C7150;
+box-shadow: -6px -4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 18px;
+}
+.hidden-area {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.container:hover .hidden-area {
+  overflow: visible;
+}
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/8550/8550941.png');
+  background-size: cover;
+  cursor: se-resize;
+}
+.div-2 {
+  cursor: move;
+  z-index: 10;
+  border: 3px dashed rgba(96, 67, 11, 0.25);
+}
+
+#newStudentName {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 90%;
+  height:25%;
+  border: 2px solid #2F2F2F;
+border-radius: 15px;
+text-align: center;
+font-weight: 700;
+color: #545454;
+}
+input[type="text"] {
+  direction: rtl;
+}
+input[type="number"] {
+  direction: rtl;
+  width: 25%;
+  height: 7.5%;
+  border: 2px solid #2F2F2F;
+border-radius: 5px;
+text-align: center;
+font-weight: 700;
+color: #545454;
+}
+
+#newStudentName:focus {
+  box-shadow: 0 0 7.5px blue;
+}
+#newStudentGender {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 45%;
+  height:25%;
+  border: 2px solid #2F2F2F;
+border-radius: 15px;
+font-weight: 700;
+color: #545454;
+direction: rtl;
+}
+#newStudentGender:focus {
+  box-shadow: 0 0 7.5px blue;
+}
+#sitNear {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  width: 45%;
+  height:25%;
+  border: 2px solid #2F2F2F;
+border-radius: 15px;
+font-weight: 700;
+color: #545454;
+direction: rtl;
+}
+#sitNear:focus {
+  box-shadow: 0 0 7.5px blue;
+}
+#addStudButton {
+  position: absolute;
+  width: 35%;
+  height: 70%;
+  top: 67.5%;
+  left: 7.5%;
+  background: #FFDEB7;
+  border: 2px solid #ABABAB;
+border-radius: 15px;
+font-weight: 700;
+color: #545454;
+user-select: none;
+}
+#addStudButton:hover {
+  background: #CFA16B;
+  border: 2px solid #000000;
+  color:#000000;
+
+}
+select option {
+  padding: 5px;
+  font-size: 140%;
+text-align: center;
+}
+#nameLabel {
+  position: relative;
+  top: 6.5%;
+  left: 88%;
+}
+
+#studentListDiv {
+  position: relative;
+  top: 30%;
+
+}
+.rotate-button-left {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  padding-right: 1.5%;
+  top: -57.5%;
+  left: 31%;
+  display: none;
+  background-image: url('https://i.ibb.co/grycg62/rotate-left-1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 17.5%;
+  height: 50%;
+}
+.rotate-button-right {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  padding-left: 1.5%;
+  top: -57.5%;
+  left: 54%;
+  display: none;
+  background-image: url('https://i.ibb.co/Ws9PG52/rotate-right-1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 17.5%;
+  height: 50%;
+}
+.leftSeat {
+  position:relative;
+  flex: 1;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+/*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStxAkF8SARnSQRZdt0dQ2C7zUIBzpzJeV5nw&usqp=CAU");*/
+background: #DDB78A;
+font-size: 80%;
+font-weight: 700;
+border-radius: 18px 0px 0px 18px;
+border: none;
+font-family: "Inter", sans-serif;
+}
+
+.rightSeat {
+  position:relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+/*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStxAkF8SARnSQRZdt0dQ2C7zUIBzpzJeV5nw&usqp=CAU");*/
+background: #DDB78A;
+font-size: 80%;
+font-weight: 700;
+border-radius: 0px 18px 18px 0px;
+border: none;
+font-family: "Inter", sans-serif;
+}
+
+.rightSeat:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(249, 213, 25, 0.4);
+
+}
+.leftSeat:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(249, 213, 25, 0.4);
+
+}
+
+.ClassRoomDiv {
+  width: 70%; /* where X is the width of your div */
+  height: 80%;
+  background: #AFC7CA;
+  border: 3px solid #000000;
+}
+#bigBlock {
+    position: relative;
+}
+#editBar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  height: 100vh;
+  overflow: auto;
+  background-color: white;
+}
+#editContainer.hidden {
+  display: none;
+}
+#editContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+    height: 100%;
+    width: 25%;
+    border-left: 3px solid #000000;
+}
+#tableCounter {
+  position: absolute;
+  font-size: 500%;
+  font-family: "Inter", sans-serif;
+  right: 42.5%;
+  top: 25%;
+  
+}
+#tableEditor {
+  position: relative;
+  width: 100%;
+  top: 15%;
+  height: 25%;
+  background-color: F6F6F6;
+}
+#tableCounterText {
+  position: absolute;
+  right: 36.5%;
+  top: 15%;
+}
+.plusButton {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 250%;
+  right: 40%;
+  top: 70%;
+font-weight: 500;
+color: #686868;
+user-select: none;
+}
+.plusButton:hover {
+  color: black;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.minusButton {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 250%;
+  right: 50%;
+  top: 68%;
+font-weight: 500;
+color: #686868;
+user-select: none;
+}
+.minusButton:hover {
+  color: black;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#addStudentForm {
+  position: relative;
+  top: 15%;
+  height: 25%;
+}
+label {
+  font-size: xx-small;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  user-select: none;
+}
+th {
+  background: #F9F9FA;
+  border-bottom: 2px solid #F0F1F3;
+color: rgba(37, 40, 45, 0.5);
+}
+tr {
+  border-bottom: 1px solid #F0F1F3;
+text-align: center;
+padding-top: 10%;
+}
+table {
+  width: 100%;
+}
+#toggle-button {
+  position:absolute;
+  top: 40%;
+  right:25%;
+  height: 20%;
+  width: 1%;
+  border-radius: 15px 0px 0px 15px;
+}
+#toggle-button:hover {
+background-color: #858585;
+}
+#toggle-button.sticky {
+  position: fixed;
+  right: 0;
+}
+#toggleimg {
+  position: absolute;
+  right: 1;
+  top: 47.5%;
+  max-width: 100%;
+  height: auto;
+}
+.gender-img-male {
+  max-width: 100%;
+  height: 65%;
+  width: 65%;
+}
+.gender-img-female {
+  max-width: 100%;
+  height: 90%;
+  width: 90%;
+}
+#teacherTable {
+  position: absolute;
+  width: 40%;
+  height: 10%;
+  background: #CAA274;
+  border: 1px solid #d3d3d3;
+  border: 4px solid #8C7150;
+box-shadow: -6px -4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 18px;
+top: 85%;
+  left: 31%;
+}
+#teacherTableheader {
+  position:absolute;
+  width: 100%;
+  height: 15%;
+  background: rgba(60, 60, 60, 0.25);  
+  cursor: move;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #E9F5FB;
+}
+#randomizer {
+  position: absolute;
+  border: none;
+  box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+  z-index: 90;
+  left: 0;
+  width: 90%;
+  height: 15%;
+  background: #F29B9B;
+font-weight: 700;
+font-size: 100%;
+display: flex;
+  justify-content: center;
+  align-items: center;
+color: #000000;
+}
+#randomizer:hover {
+  font-size: 150%;
+  color: #3E4445;
+  }
+.update-gender-select {
+  direction: rtl;
+  text-align: center;
+}
+.update-name-text {
+  direction: rtl;
+width: 100%;
+text-align: center;
+}
+.update-sitnear-select {
+  direction: rtl;
+  text-align: center;
+}
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  height: 85%;
+}
+
+.expandable.open .expandable-content {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+.expandable-content2 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  height: 30%;
+}
+
+.expandable2.open .expandable-content2 {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+#bulkStudents {
+  position:relative;
+  width: 100%;
+  top: 25%;
+  z-index: 15;
+  text-align: right;
+font-size: 70%;
+max-height: 5000%;
+}
+#tableOptions {
+  position:relative;
+  width: 100%;
+  top: 15%;
+  z-index: 15;
+  background-color: F6F6F6;
+  text-align: right;
+font-size: 70%;
+}
+#changeTableSize{
+  position: relative;
+  width: 20%;
+  height: 7.5%;
+  right: 70%;
+  top: 35%;
+  font-weight: 500;
+}
+#teacherTableSlider {
+  position: relative;
+  background-color: #2196F3;
+  border-radius: 34px;
+
+  width: 10%;
+  height: 3.5%;
+  left: 59%;
+  top: 1%;
+  transition: background-color 0.3s ease;
+
+}
+#teacherTableCircle {
+  position: relative;
+  border-radius: 50%;
+  top: 50%;
+  background-color: white;
+  width: 40%;
+  height: 80%;
+  border: 1px solid #9C9C9C;
+  left: 47.5%;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+}
+#sideRandom {
+  position: absolute;
+  height: 15%;
+  right: 0;
+  width: 10%;
+  z-index: 90;
+  box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+.bulktextbox {
+  position: relative;
+  width: 70%;
+  height: 80%;
+  overflow: auto;
+  line-height: 1.4em; /* adjust this value as needed to match the height of the textbox */
+  overflow-wrap: break-word;
+  direction: rtl;
+  font-family: "Inter", sans-serif;
+  max-height: 12em;
+  max-width: 98%;
+}
+.left-lock {
+  position: absolute;
+  top: -77.5%;
+  left: 9%;
+
+}
+.right-lock {
+  position: absolute;
+  top: -77.5%;
+  left: 75%;
+  width: 17.5%;
+  height: 50%;
+}
+.position-changers:hover {
+  background: #EAEAEA;
+border: 1px solid #686868 !important;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+color: #000000 !important;
+cursor: pointer;
+}
+.suggestion-div-left {
+  position: relative;
+  top: 5%;
+  z-index: 499;
+  width: auto;
+  height: auto;
+  box-shadow: -6px -4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+.suggestion-div-right {
+  position: relative;
+  top: 5%;
+  right: 0;
+  z-index: 499;
+  width: auto;
+  height: auto;
+  box-shadow: -6px -4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+.suggested-name-male {
+  z-index: 500;
+  background: #F6F6F6;
+  border-width: 0px 1px 1px 1px;
+border-style: solid;
+border-color: #000000;
+min-height: 65%;
+max-height:fit-content;
+line-height:165%;
+word-break: break-word;
+cursor: pointer;
+display: flex;
+  align-items: center;
+}
+.suggested-name-male:hover {
+  box-shadow: inset -4px 0px 8px 2px rgba(142, 197, 209, 0.5), inset 4px 0px 8px 2px rgba(142, 197, 209, 0.5);
+}
+.suggested-name-female {
+  z-index: 500;
+  background: #F6F6F6;
+  border-width: 0px 1px 1px 1px;
+border-style: solid;
+border-color: #000000;
+min-height: 65%;
+max-height:fit-content;
+line-height:165%;
+line-break:anywhere;
+cursor: pointer;
+display: flex;
+  align-items: center;
+}
+.suggested-name-female:hover {
+  box-shadow: inset -4px 0px 8px 2px rgba(204, 142, 209, 0.5), inset 4px 0px 8px 2px rgba(204, 142, 209, 0.5);
+}
+.suggested-male {
+  position: relative;
+width: 0.75em;
+height: 0.85em;
+margin-left: auto; /* Push image to the right */
+  display: block;
+  right: 3.75%;
+}
+.suggested-female {
+width: 1.15em;
+height: 1em;
+margin-left: auto; /* Push image to the right */
+  display: block;
+}
+.name-container {
+  flex: 1; /* Expand to fill remaining space */
+  text-align: center;
+}
+.students-outside {
+  position: relative;
+  direction: rtl;
+  right: 35%;
+}
+.x-button-leftover {
+  position: absolute;
+  top: -40%;
+  right: -2.5%;
+  cursor: pointer;
+  }
+</style>
+
+<head>
+  <link rel="stylesheet" href="../Desktop/הצעות מחיר אליאב/more/Inter Web/inter.css">
+</head>
+
+<body>
+<div id="bigBlock" class="ClassRoomDiv">
+  <div id="teacherTable" style="resize: both; overflow: auto;">
+    <div id="teacherTableheader"></div>
+  </div>
+  <div class="resize-handle"></div>
+</div>
+<button id="toggle-button">
+  <img id="toggleimg" src="https://i.ibb.co/wzdPY2B/right-arrow.png" alt=""></button>
+<div id="editContainer">
+  <div id="editBar">
+    <button onclick="randomize()" id="randomizer">הושב רנדומלית</button>
+    <div id="sideRandom">
+      
+    </div>
+   <img src="https://i.ibb.co/nsJwmzT/shuffle.png" alt="" style="position: absolute; right: 2%; top: 5.5%; width: 6%; height: 4%;">
+    <div id="tableEditor">
+      <span id="tableCounterText">כמות שולחנות</span>
+      <span id="tableCounter"> 0 </span>
+      <button id="addTableButton" class="plusButton">+</button>
+      <button onclick="removeTable()" class="minusButton">-</button>
+     </div>
+    <div id="tableOptions" class="expandable">
+      <div class="expandable-header" style="cursor: pointer; user-select: none;">הצג אפשרויות מתקדמות +</div>
+      <div class="expandable-content">
+        <div id="tableSizes"> <br>
+          <span style=" position:relative; right: 5%; font-size: 120%; font-weight: 600;">שינוי גודל השולחנות (באחוזים מגודל הכיתה)
+          </span> <br>
+          <label for="tableWidth" style="position: relative; right:40%">רוחב</label>
+          <label for="tableHeight" style="position: relative; right:5%">גובה</label>
+<br>
+          <input id="tableWidth" type="number" value="16" min="1" max="100" step="0.10" style="position: relative; left: 8%;">
+          <input id="tableHeight" type="number" value="9" min="1" max="100" step="0.10" style="position: relative; left: 11%;">
+          <button id="changeTableSize">החל</button>
+        </div>
+        <span style=" position:relative; top: 1.5%; right: 5%; font-size: 120%; font-weight: 600;">סידור שולחנות אוטומטי
+        </span> 
+        <div id="threeLinePos" onclick="positionTablesThreeInRow()" class="position-changers" style="position: relative; top: 2.5%; width:80%; left: 10%; height: 17.5%; border-width: 1px 0px;
+        border-style: solid;
+        border-color: #9D9D9D; color: #6b6b6b;">
+          <span style="position: relative; top: -2.5%; right: 20%; font-size: 60; font-weight: 600;">3</span> <br>
+          <span style="position: relative; top: -12.5%; right: 8.5%; font-size: 15; font-weight: 600;">שולחנות בשורה</span>
+        <img src="https://i.ibb.co/HPRGxrK/Group-13-1.png" alt="" id="threeLineImg" style="position: absolute; left: 5%; top: 12.5%; height: 75%; ">
+        </div>
+        <div id="fourLinePos" onclick="positionTablesFourInRow()" class="position-changers" style="position: relative; top: 2.5%; width:80%; left: 10%; height: 17.5%;border-bottom: 1px solid #9D9D9D; color: #6b6b6b;">
+          <span style="position: relative; top: -2.5%; right: 20%; font-size: 60; font-weight: 600;">4</span> <br>
+          <span style="position: relative; top: -12.5%; right: 8.5%; font-size: 15; font-weight: 600;">שולחנות בשורה</span>
+        <img src="https://i.ibb.co/fp0xx2K/fourgrey.png" alt="" id="fourLineImg" style="position: absolute; left: 5%; top: 12.5%; height: 75%; ">
+        </div>
+        <div id="fiveLinePos" onclick="positionTablesFiveInRow()" class="position-changers" style="position: relative; top: 2.5%; width:80%; left: 10%; height: 17.5%;border-bottom: 1px solid #9D9D9D; color: #6b6b6b;">
+          <span style="position: relative; top: -2.5%; right: 20%; font-size: 60; font-weight: 600;">5</span> <br>
+          <span style="position: relative; top: -12.5%; right: 8.5%; font-size: 15; font-weight: 600;">שולחנות בשורה</span>
+        <img src="https://i.ibb.co/zrJsx0x/fivegrey.png" alt="" id="fiveLineImg" style="position: absolute; left: 5%; top: 12.5%; height: 75%; ">
+        </div>
+        <div id="chetPos" class="position-changers" style="position: relative; top: 2.5%; width:80%; left: 10%; height: 17.5%;border-bottom: 1px solid #9D9D9D; color: #6b6b6b;">
+          <span style="position: relative; top: -2.5%; right: 20%; font-size: 60; font-weight: 600;">ח</span> <br>
+          <span style="position: relative; top: -12.5%; right: 18.5%; font-size: 15; font-weight: 600;">צורת ח׳</span>
+        <img src="https://i.ibb.co/f2fWSHj/chetgrey.png" alt="" id="chetImg" style="position: absolute; left: 5%; top: 12.5%; height: 75%; ">
+        </div>
+        <span style=" position:relative; top: 4.25%; right: 10%; font-size: 120%; font-weight: 600;">שולחן מורה</span>
+        <div id="teacherTableSlider">
+          <div id="teacherTableCircle"></div>
+        </div>
+        <div style="position: relative; top: -3%; width: 0.15%; height: 4.5%; background-color: grey; left: 56%;"></div>
+        <button onclick="lockAll()" style="position: relative; left: -47%; top: -7.75%; width: 17.5%; height: 5%; font-size: 10; font-weight: 525;">נעילת כל המושבים</button>
+        <div style="position: relative; top: -12.5%; width: 0.15%; height: 4.5%; background-color: grey; left: 32.5%;"></div>
+        <button onclick="unlockAll()" style="position: relative;  left: -70%; top: -17.25%; width: 22.5%; height: 5%; font-size: 10; font-weight: 525;">בטל נעילה לכל המושבים</button>
+
+      </div>
+    </div>
+    
+    <div id="addStudentForm">
+      <span style="position:relative; top: 8%; left: 45%; font-weight: 600; user-select: none;">הוספת תלמידים</span>
+      <label for="newStudentName" id="nameLabel" style="position:relative; top: 19%; left: 75%;">שם</label>
+      <input type="text" id="newStudentName">
+
+      <label for="newStudentGender" style="position:relative; top: 58%; left: 79%;">מין</label>
+      <select name="newStudentGender" id="newStudentGender">
+        <option value=""></option>
+        <option value="Male">בן</option>
+        <option value="Female">בת</option>
+      </select>
+      
+      <label for="sitNear" style="position:relative; top: 98%; left: 83.5%;">יושב ליד</label>
+      <select name="sitNear" id="sitNear">
+        <option value="Anyone">כולם</option>
+        <option value="Male">רק בנים</option>
+        <option value="Female">רק בנות</option>
+      </select>
+      <button onclick="addStudent()" id="addStudButton">הוסף תלמיד</button>
+    </div>
+    <div id="bulkStudents" class="expandable2">
+      <div class="expandable-header2" style="cursor: pointer; user-select: none;">הוסף תלמידים בכמות +</div>
+      <div class="expandable-content2">
+     <textarea name="" id="bulkStudentTextbox" cols="30" class="bulktextbox" rows="30"
+     placeholder="הוסף תלמידים בכמות באופן הבא:
+     שם,מין,יושב ליד
+     לדוגמא:
+     אבי כהן, בן, בנים,
+     נועה לוי, בת, כולם,
+     סמי, בן, בנות"
+     ></textarea> <br>
+     <input type="button" onclick="addStudentBulk()" value="הוסף כמות"
+     style="position: relative;">
+     <div id="errorBulkDiv" style=" position: relative; background-color: transparent;  overflow: auto; width: 100%; height: 20%;">
+    <span style="  position: absolute;
+    width: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2.5%;
+    font-weight: 700;
+    color:#990f0f;
+    user-select: none;" id="errorCountdown"></span>
+    <div style="  position: absolute;
+    width: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -2.5%;
+    font-weight: 700;
+    color:black;
+    user-select: none;" id="errorXbutton"></div>
+      <div id="errorContent" style=" padding-left: 20px; width: 90%;">
+    </div>
+    </div>
+    </div>
+    <div id="studentListDiv" style="position: relative; top: 27.5%;">
+      <table id="studentTable">
+        <tr>
+          <th width="15%"></th>
+          <th width="30%">יושב ליד</th>
+            <th width="45%">שם</th>
+            <th width="10%" style="color:white;   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            background-image: url('https://i.ibb.co/cc04fn2/people.png');" id="studentAmount" >0</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  class Table
+  {
+    constructor()
+    {
+      this.leftSeatOccupied = false;
+      this.rightSeatOccupied = false;
+    }
+  }
+
+  class Student
+  {
+    constructor()
+    {
+      this.id = Math.random().toString(36).substr(2, 9); // generate a unique ID
+      this.name = "";
+      this.gender = "";
+      this.sitNear = "";    }
+  }
+
+  let tableArray = []
+  let studentArray = []
+  let tableCounter = 0;
+  let isRunning = false;
+  let lockedTextboxes = [];
+let editBarOpened = true;
+let expandOptionsOpened = false;
+let expandOptionsOpened2 = false;
+let studentAmount = 0;
+let tableDivsArray = [];
+
+let teacherTable = document.getElementById('teacherTable')
+dragElement(teacherTable)
+
+const expandableDiv = document.querySelector('.expandable');
+const expandableHeader = expandableDiv.querySelector('.expandable-header');
+
+expandableHeader.addEventListener('click', function() {
+  expandableDiv.classList.toggle('open');
+  if(expandOptionsOpened == false)
+  {
+    expandOptionsOpened = !expandOptionsOpened;
+    expandableHeader.innerText = "הסתר אפשרויות מתקדמות -"
+  }
+  else {
+    expandOptionsOpened = !expandOptionsOpened;
+    expandableHeader.innerText = "הצג אפשרויות מתקדמות +"
+  }
+});
+
+const expandableDiv2 = document.querySelector('.expandable2');
+const expandableHeader2 = expandableDiv2.querySelector('.expandable-header2');
+
+expandableHeader2.addEventListener('click', function() {
+  expandableDiv2.classList.toggle('open');
+  if(expandOptionsOpened2 == false)
+  {
+    expandOptionsOpened2 = !expandOptionsOpened2;
+    expandableHeader2.innerText = "הוסף תלמידים בכמות -"
+  }
+  else {
+    expandOptionsOpened2 = !expandOptionsOpened2;
+    expandableHeader2.innerText = "הוסף תלמידים בכמות +"
+  }
+});
+let teacherTableSliderParent = document.getElementById('teacherTableSlider')
+let teacherTableSliderChild = document.getElementById('teacherTableCircle')
+let teacherTableVisible = true;
+
+teacherTableSliderChild.addEventListener('click', () => {
+  if (teacherTableVisible == true)
+  {
+    teacherTableVisible = !teacherTableVisible;
+    teacherTableSliderParent.style.backgroundColor = '#ccc';
+  teacherTableSliderChild.style.left = '2.5%';
+  teacherTable.style.display = "none"
+  }
+  else {
+    teacherTableVisible = !teacherTableVisible;
+    teacherTableSliderParent.style.backgroundColor = '#2196F3';
+  teacherTableSliderChild.style.left = '47.5%';
+  teacherTable.style.display = "block"
+  }
+});
+
+  const toggleButton = document.getElementById('toggle-button');
+const toggleDiv = document.getElementById('editContainer');
+toggleButton.addEventListener('click', () => {
+  toggleDiv.classList.toggle('hidden');
+  toggleButton.classList.toggle('sticky');
+  theImg = document.getElementById('toggleimg')
+  if(editBarOpened == true) {
+    theImg.src = "https://i.ibb.co/JzphDDd/left-arrow-angle-big-gross-symbol.png"
+    editBarOpened = false;
+  } else {
+    theImg.src = "https://i.ibb.co/wzdPY2B/right-arrow.png"
+    editBarOpened = true;
+  }
+});
+
+  // Add Table function:
+  document.getElementById("addTableButton").addEventListener("click", function(){
+    let newTable = new Table(); // Create a Table Class
+  tableArray.push(newTable)
+
+  tableCounter = tableCounter + 1;  // Increment table counter on interface
+
+
+  let counterText = document.getElementById('tableCounter')
+if(tableCounter > 9) {
+  counterText.style.right = "37.5%";
+}
+else {
+  counterText.style.right = "42.5%";
+
+}
+  counterText.innerText = tableCounter;
+
+ let newDiv2 = document.createElement("div");    // Create Div for Table
+  newDiv2.id = "table" + tableArray.length;
+  newDiv2.className = "div-1"
+  let block = document.getElementById('bigBlock')
+  newDiv1 = document.createElement("div")
+  newDiv1.id = newDiv2.id + "header"
+  newDiv1.className = "div-2"
+  
+  tableDivsArray.push(newDiv2)
+
+  let hoverAreaDiv = document.createElement("div")
+  hoverAreaDiv.className = "hidden-area"
+newDiv2.appendChild(hoverAreaDiv)
+
+  let rotateButtonLeft = document.createElement("button"); // Create rotate button
+  rotateButtonLeft.className = "rotate-button-left"
+newDiv2.appendChild(rotateButtonLeft);
+
+  let rotateButtonRight = document.createElement("button"); // Create rotate button
+  rotateButtonRight.className = "rotate-button-right"
+newDiv2.appendChild(rotateButtonRight);
+
+
+rotateButtonRight.addEventListener("click", function() { // Rotate button click event
+  newDiv2.style.transform += "rotate(45deg)"; // Rotate the parent div 45 degrees
+});
+rotateButtonLeft.addEventListener("click", function() {
+  newDiv2.style.transform += "rotate(-45deg)"; 
+});
+
+  let leftSeat = document.createElement("input");   // Creating Textboxes as Seats
+  let rightSeat = document.createElement("input"); 
+  leftSeat.setAttribute("type", "text");
+  rightSeat.setAttribute("type", "text");
+  leftSeat.setAttribute("id", "leftSeatTable" + tableArray.length);
+  rightSeat.setAttribute("id", "rightSeatTable" + tableArray.length);
+  leftSeat.className = "leftSeat"
+  rightSeat.className = "rightSeat"
+    
+
+  
+  let leftSeatLockButton = document.createElement("div");    // Creating Lock Buttons
+  let rightSeatLockButton = document.createElement("div");
+
+  leftSeatLockButton.className = "left-lock"
+  rightSeatLockButton.className = "right-lock"
+
+  let lockedImg = document.createElement("img")
+  let unlockedImg = document.createElement("img")
+
+  let unlockedImg2 = document.createElement("img")
+  unlockedImg2.src = "https://i.ibb.co/3cDHQ4j/unlocked.png"
+
+
+  lockedImg.src = "https://i.ibb.co/7x3m9hZ/lock-1.png"
+  unlockedImg.src = "https://i.ibb.co/3cDHQ4j/unlocked.png"
+
+  leftSeatLockButton.appendChild(unlockedImg)
+  rightSeatLockButton.appendChild(unlockedImg2)
+  leftSeatLockButton.style.display = "none";
+  rightSeatLockButton.style.display = "none";
+  let newDivForLeftSeat = document.createElement("div");
+  let newDivForRightSeat = document.createElement("div");
+
+  newDivForLeftSeat.appendChild(leftSeat)   // Appending
+  newDivForLeftSeat.appendChild(leftSeatLockButton)
+  newDivForRightSeat.appendChild(rightSeat)
+  newDivForRightSeat.appendChild(rightSeatLockButton)
+  newDiv2.appendChild(newDivForLeftSeat)
+  newDiv2.appendChild(newDiv1)
+  newDiv2.appendChild(newDivForRightSeat)
+  
+  block.appendChild(newDiv2);
+
+  let leftLocked = false;
+  let rightLocked = false;
+
+  leftSeatLockButton.addEventListener("click", function(){    // Creating Lock button function
+    let leftSeatTextboxId = leftSeat.getAttribute("id");
+    const leftSeatLockButtonImg = leftSeatLockButton.querySelector('img');
+
+    if(lockedTextboxes.includes(leftSeatTextboxId)) {
+      lockedTextboxes.splice(lockedTextboxes.indexOf(leftSeatTextboxId), 1);
+      leftSeatLockButtonImg.src = "https://i.ibb.co/3cDHQ4j/unlocked.png"
+      leftSeat.readOnly = false;
+      leftSeat.style.cursor = "text";
+      leftLocked = false;
+    } else {
+      lockedTextboxes.push(leftSeatTextboxId);
+      leftSeatLockButtonImg.src = "https://i.ibb.co/7x3m9hZ/lock-1.png"
+      leftSeat.readOnly = true;
+      leftSeat.style.cursor = "not-allowed";
+      leftSeatLockButton.style.display = "block";
+      leftLocked = true;
+    }
+  });
+
+  rightSeatLockButton.addEventListener("click", function(){
+    let rightSeatTextboxId = rightSeat.getAttribute("id");
+    const rightSeatLockButtonImg = rightSeatLockButton.querySelector('img');
+
+    if(lockedTextboxes.includes(rightSeatTextboxId)) {
+      lockedTextboxes.splice(lockedTextboxes.indexOf(rightSeatTextboxId), 1);
+      rightSeatLockButtonImg.src = "https://i.ibb.co/3cDHQ4j/unlocked.png"
+      rightSeat.readOnly = false;
+      rightSeat.style.cursor = "text";
+      rightSeatLockButton.style.display = "none";
+      rightLocked = false;
+    } else {
+      lockedTextboxes.push(rightSeatTextboxId);
+      rightSeatLockButtonImg.src = "https://i.ibb.co/7x3m9hZ/lock-1.png"
+      rightSeat.readOnly = true;
+      rightSeat.style.cursor = "not-allowed";
+      rightSeatLockButton.style.display = "block";
+      rightLocked = true;
+    }
+  });
+
+
+  newDiv2.addEventListener("mouseover" , ()=>{
+  rotateButtonRight.style.display = "block"
+  rotateButtonLeft.style.display = "block"
+  leftSeatLockButton.style.display = "block";
+  rightSeatLockButton.style.display = "block";
+
+    })
+    newDiv2.addEventListener("mouseleave" , ()=>{
+  rotateButtonRight.style.display = "none";
+  rotateButtonLeft.style.display = "none";
+  const leftSeatLockButtonImg = leftSeatLockButton.querySelector('img');
+  const rightSeatLockButtonImg = rightSeatLockButton.querySelector('img');
+
+  if(leftSeatLockButtonImg.src == "https://i.ibb.co/3cDHQ4j/unlocked.png")
+  {
+    leftSeatLockButton.style.display = "none";
+  }
+  if(rightSeatLockButtonImg.src == "https://i.ibb.co/3cDHQ4j/unlocked.png")
+  {
+    rightSeatLockButton.style.display = "none";
+  }
+    })
+
+    leftSeat.addEventListener("keyup" , function(event){
+    let oldSuggested = document.querySelector(".suggestion-div-left");
+    if(oldSuggested != null)
+    {
+      newDivForLeftSeat.removeChild(oldSuggested);
+    }
+
+
+    let suggestionDiv = document.createElement("div")   // Creating a div for suggestions
+    suggestionDiv.className = "suggestion-div-left"
+    newDivForLeftSeat.appendChild(suggestionDiv)
+
+    if (event.key === "Escape" || leftSeat.value == "") {
+      let deleteThisDiv = document.querySelector(".suggestion-div-left");
+    if (deleteThisDiv != null) {
+      newDivForLeftSeat.removeChild(deleteThisDiv);
+    }
+     }
+
+    function handleClick(event) {
+  if (event.target !== newDivForLeftSeat && !newDivForLeftSeat.contains(event.target)) {
+    const deleteThisDiv = document.querySelector('.suggestion-div-left');
+    if (deleteThisDiv) {
+      newDivForLeftSeat.removeChild(deleteThisDiv);
+    }
+  }
+}
+
+document.addEventListener('click', handleClick);
+
+
+    let theVal = leftSeat.value
+    const valLength = theVal.length;
+
+    let matchingNames = [];
+    // Loop through each student in the array
+    studentArray.forEach(student => {
+     // Check if the student's name starts with theVal
+     if (student.name.startsWith(theVal)) {
+    matchingNames.push(student);
+         }
+      });
+      let iteration = 0;
+      matchingNames.forEach(student => {   // for each matching name, create a div
+        let newName = document.createElement("div")
+        const boldPart = student.name.slice(0, valLength);
+        const regularPart = student.name.slice(valLength);
+        let boldPartSpan = document.createElement("b")
+        let regularPartSpan = document.createElement("span")
+        boldPartSpan.innerText = boldPart
+        regularPartSpan.innerText = regularPart
+        let genderImgForNewSuggestion = document.createElement("img")
+
+        if(student.gender == "Male")
+        {
+          genderImgForNewSuggestion.src = "https://i.ibb.co/Q90kK4P/male-student.png"
+          genderImgForNewSuggestion.className = "suggested-male"
+          newName.className = "suggested-name-male"
+        }
+        else if(student.gender == "Female")
+        {
+          genderImgForNewSuggestion.src = "https://i.ibb.co/GFqPFqx/woman.png"
+          genderImgForNewSuggestion.className = "suggested-female"
+          newName.className = "suggested-name-female"
+        }
+
+
+        newName.addEventListener("click" , ()=>{    // onclick the div, insert name to textbox and delete suggestion list     
+          leftSeat.value = student.name;
+          newDivForLeftSeat.removeChild(suggestionDiv);
+          document.removeEventListener('click', handleClick);
+        })
+        let newDiv = document.createElement("span")
+        newDiv.className = "name-container"
+        newDiv.appendChild(boldPartSpan)
+        newDiv.appendChild(regularPartSpan)
+        newName.appendChild(newDiv)
+        newName.appendChild(genderImgForNewSuggestion)
+
+        if(iteration == 0 && iteration == matchingNames.length - 1) {
+          newName.style.borderRadius = "10px 10px 10px 10px"
+        }
+        else if (iteration == matchingNames.length - 1) {
+          newName.style.borderRadius = "0px 0px 10px 10px"
+        }
+        else if (iteration == 0) {
+          newName.style.borderRadius = "10px 10px 0px 0px"
+        }
+       suggestionDiv.appendChild(newName)
+       iteration++;
+      })
+
+  })
+  rightSeat.addEventListener("keyup" , function(event){
+    let oldSuggested = document.querySelector(".suggestion-div-right");
+    if(oldSuggested != null)
+    {
+      newDivForRightSeat.removeChild(oldSuggested);
+    }
+
+
+    let suggestionDiv = document.createElement("div")   // Creating a div for suggestions
+    suggestionDiv.className = "suggestion-div-right"
+    newDivForRightSeat.appendChild(suggestionDiv)
+
+    if (event.key === "Escape" || rightSeat.value == "") {
+      let deleteThisDiv = document.querySelector(".suggestion-div-right");
+    if (deleteThisDiv != null) {
+      newDivForRightSeat.removeChild(deleteThisDiv);
+    }
+     }
+
+    function handleClick(event) {
+  if (event.target !== newDivForRightSeat && !newDivForRightSeat.contains(event.target)) {
+    const deleteThisDiv = document.querySelector('.suggestion-div-right');
+    if (deleteThisDiv) {
+      newDivForRightSeat.removeChild(deleteThisDiv);
+    }
+  }
+}
+
+document.addEventListener('click', handleClick);
+
+
+    let theVal = rightSeat.value
+    const valLength = theVal.length;
+
+    let matchingNames = [];
+    // Loop through each student in the array
+    studentArray.forEach(student => {
+     // Check if the student's name starts with theVal
+     if (student.name.startsWith(theVal)) {
+    matchingNames.push(student);
+         }
+      });
+      let iteration = 0;
+      matchingNames.forEach(student => {   // for each matching name, create a div
+        let newName = document.createElement("div")
+        const boldPart = student.name.slice(0, valLength);
+        const regularPart = student.name.slice(valLength);
+        let boldPartSpan = document.createElement("b")
+        let regularPartSpan = document.createElement("span")
+        boldPartSpan.innerText = boldPart
+        regularPartSpan.innerText = regularPart
+        let genderImgForNewSuggestion = document.createElement("img")
+
+        if(student.gender == "Male")
+        {
+          genderImgForNewSuggestion.src = "https://i.ibb.co/Q90kK4P/male-student.png"
+          genderImgForNewSuggestion.className = "suggested-male"
+          newName.className = "suggested-name-male"
+        }
+        else if(student.gender == "Female")
+        {
+          genderImgForNewSuggestion.src = "https://i.ibb.co/GFqPFqx/woman.png"
+          genderImgForNewSuggestion.className = "suggested-female"
+          newName.className = "suggested-name-female"
+        }
+
+
+        newName.addEventListener("click" , ()=>{    // onclick the div, insert name to textbox and delete suggestion list     
+          rightSeat.value = student.name;
+          newDivForRightSeat.removeChild(suggestionDiv);
+          document.removeEventListener('click', handleClick);
+        })
+        let newDiv = document.createElement("span")
+        newDiv.className = "name-container"
+        newDiv.appendChild(boldPartSpan)
+        newDiv.appendChild(regularPartSpan)
+        newName.appendChild(newDiv)
+        newName.appendChild(genderImgForNewSuggestion)
+
+        if(iteration == 0 && iteration == matchingNames.length - 1) {
+          newName.style.borderRadius = "10px 10px 10px 10px"
+        }
+        else if (iteration == matchingNames.length - 1) {
+          newName.style.borderRadius = "0px 0px 10px 10px"
+        }
+        else if (iteration == 0) {
+          newName.style.borderRadius = "10px 10px 0px 0px"
+        }
+       suggestionDiv.appendChild(newName)
+       iteration++;
+      })
+
+  })
+
+  
+  dragElement(newDiv2)
+  newDiv2.style.left = "42.5%"
+  newDiv2.style.top = "35%"
+});
+
+//Make the DIV element draggagle:
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+function removeTable()
+{
+  if(tableArray.length == 0)
+  {
+    return;
+  }
+  let theID = "leftSeatTable" + tableArray.length
+  if(lockedTextboxes.includes(theID)) {
+      lockedTextboxes.splice(lockedTextboxes.indexOf(theID), 1);
+  }
+  let theID2 = "rightSeatTable" + tableArray.length
+  if(lockedTextboxes.includes(theID2)) {
+      lockedTextboxes.splice(lockedTextboxes.indexOf(theID2), 1);
+  }
+  let tableToRemove = document.getElementById("table" + tableArray.length)
+  tableToRemove.remove()
+  tableArray.pop()
+  tableDivsArray.pop()
+  tableCounter = tableCounter - 1;  // Decrease table counter on interface 
+  let counterText = document.getElementById('tableCounter')
+if(tableCounter > 9) {
+  counterText.style.right = "37.5%";
+}
+else {
+  counterText.style.right = "42.5%";
+
+}
+counterText.innerText = tableCounter;
+  
+}
+
+function addStudent()
+{
+  let StudentName = document.getElementById('newStudentName').value
+  let StudentGender = document.getElementById('newStudentGender').value
+  let StudentSitNear = document.getElementById('sitNear').value
+  if(StudentName.length < 1 || StudentGender == "")
+  {
+    alert('חובה למלא את כל השדות כולל שם ומין')
+    return;
+  }
+  let newStudent = new Student()
+  newStudent.name = StudentName
+  newStudent.gender = StudentGender
+  newStudent.sitNear = StudentSitNear
+  studentArray.push(newStudent);
+  
+  let list = document.getElementById('studentTable')
+  let tr = document.createElement("tr")
+  let tdName = document.createElement("td")
+  let tdGender = document.createElement("td")
+  let tdSitnear = document.createElement("td")
+  let tdOptions = document.createElement("td")
+  let genderImg = document.createElement("img")
+
+
+  tdName.innerText = StudentName
+  if(StudentGender == "Male")
+  {
+    genderImg.src = "https://i.ibb.co/Q90kK4P/male-student.png"
+    genderImg.className = "gender-img-male"
+  } else {
+    genderImg.src = "https://i.ibb.co/GFqPFqx/woman.png"
+    genderImg.className = "gender-img-female"
+
+  }
+  if(StudentSitNear == "Anyone") {
+    tdSitnear.innerText = "כולם"
+  } else if (StudentSitNear == "Male") {
+    tdSitnear.innerText = "רק בנים"
+  } else {
+    tdSitnear.innerText = "רק בנות"
+  }
+
+  let deleteButton = document.createElement("img")
+  deleteButton.src="https://i.ibb.co/mTXWpmF/bin.png"
+  tdOptions.appendChild(deleteButton)
+
+  let editButton = document.createElement("img")
+  editButton.src = "https://i.ibb.co/gz8CYFx/pencil.png"
+  tdOptions.appendChild(editButton)
+
+
+  tdGender.appendChild(genderImg)
+  tr.appendChild(tdOptions)
+  tr.appendChild(tdSitnear)
+  tr.appendChild(tdName)
+  tr.appendChild(tdGender)
+
+  list.appendChild(tr)
+
+editButton.addEventListener("click" , () => {
+  let imgElement = tdGender.querySelector('img');
+  tdGender.textContent = "";
+  let imgSrc = imgElement.src;
+
+  let maleImg = document.createElement("img")
+  maleImg.src = "https://i.ibb.co/Q90kK4P/male-student.png"
+
+  let femaleImg = document.createElement("img")
+  femaleImg.src = "https://i.ibb.co/GFqPFqx/woman.png"
+
+  let updateGenderSelect = document.createElement("select")
+
+  let option1 = document.createElement("option");
+option1.value = "Male";
+option1.text = "בן";
+
+let option2 = document.createElement("option");
+option2.value = "Female";
+option2.text = "בת";
+
+if(imgSrc == "https://i.ibb.co/Q90kK4P/male-student.png")
+{
+  option1.selected = true;
+} else {
+  option2.selected = true;
+}
+
+updateGenderSelect.add(option1);
+updateGenderSelect.add(option2);
+
+updateGenderSelect.className = "update-gender-select"
+tdGender.appendChild(updateGenderSelect)
+
+let oldName = tdName.innerText
+tdName.textContent = "";
+let updateNameTextbox = document.createElement("input")
+updateNameTextbox.value = oldName
+updateNameTextbox.className = "update-name-text"
+tdName.appendChild(updateNameTextbox)
+
+let oldSitnear = tdSitnear.innerText
+tdSitnear.textContent = "";
+let updateSitnearSelect = document.createElement("select")
+
+let anyoneOption = document.createElement("option")
+anyoneOption.value = "Anyone";
+anyoneOption.text = "כולם";
+let maleOption = document.createElement("option")
+maleOption.value = "Male";
+maleOption.text = "רק בנים";
+let femaleOption = document.createElement("option")
+femaleOption.value = "Female";
+femaleOption.text = "רק בנות";
+
+updateSitnearSelect.add(anyoneOption);
+updateSitnearSelect.add(maleOption);
+updateSitnearSelect.add(femaleOption);
+
+if(oldSitnear == "כולם")
+{
+  anyoneOption.selected = true;
+} else if(oldSitnear == "רק בנים"){
+  maleOption.selected = true;
+} else if(oldSitnear == "רק בנות"){
+  femaleOption.selected = true;
+}
+updateSitnearSelect.className = "update-sitnear-select"
+tdSitnear.appendChild(updateSitnearSelect)
+
+tdOptions.textContent = "";
+
+let xButton = document.createElement("img")
+xButton.src="https://i.ibb.co/y8Sc0yp/cancel.png"
+
+
+let vButton = document.createElement("img")
+vButton.src="https://i.ibb.co/ct4WNdJ/check-mark.png"
+tdOptions.appendChild(vButton)
+tdOptions.appendChild(xButton)
+
+xButton.addEventListener("click", ()=>{
+  tdGender.textContent = "";
+tdGender.appendChild(genderImg)
+
+tdName.textContent = "";
+tdName.innerText = StudentName
+
+tdSitnear.textContent = "";
+if(StudentSitNear == "Anyone") {
+    tdSitnear.innerText = "כולם"
+  } else if (StudentSitNear == "Male") {
+    tdSitnear.innerText = "רק בנים"
+  } else {
+    tdSitnear.innerText = "רק בנות"
+  }
+
+  tdOptions.textContent = "";
+  tdOptions.appendChild(deleteButton)
+  tdOptions.appendChild(editButton)
+
+})
+
+vButton.addEventListener("click" , ()=>{
+  if(updateNameTextbox.value.length < 1)
+  {
+    alert('שם חייב להכיל תווים')
+    return;
+  }
+
+  newStudent.name = updateNameTextbox.value
+  newStudent.gender = updateGenderSelect.value
+  newStudent.sitNear = updateSitnearSelect.value
+  StudentName = updateNameTextbox.value
+  StudentSitNear = updateSitnearSelect.value
+
+  for (let i = 0; i < studentArray.length; i++) {
+  if (studentArray[i].id === newStudent.id) {
+    studentArray[i].name = updateNameTextbox.value;
+    studentArray[i].gender = updateGenderSelect.value;
+    studentArray[i].sitNear = updateSitnearSelect.value
+    break;
+  } }
+  
+  tdGender.textContent = "";
+if(updateGenderSelect.value == "Male")
+  {
+    genderImg.src = "https://i.ibb.co/Q90kK4P/male-student.png"
+    genderImg.className = "gender-img-male"
+  } else {
+    genderImg.src = "https://i.ibb.co/GFqPFqx/woman.png"
+    genderImg.className = "gender-img-female"
+  }
+  tdGender.appendChild(genderImg)
+
+  tdName.textContent = "";
+  tdName.innerText = updateNameTextbox.value;
+
+  tdSitnear.textContent = "";
+  if(updateSitnearSelect.value == "Anyone") {
+    tdSitnear.innerText = "כולם"
+  } else if (updateSitnearSelect.value == "Male") {
+    tdSitnear.innerText = "רק בנים"
+  } else {
+    tdSitnear.innerText = "רק בנות"
+  }
+
+  tdOptions.textContent = "";
+  tdOptions.appendChild(deleteButton)
+  tdOptions.appendChild(editButton)
+
+})
+
+
+})
+
+  deleteButton.addEventListener("click", () => {
+    const confirmed = window.confirm("האם אתה בטוח שאתה רוצה למחוק את " + StudentName + " מהרשימה?");
+
+if (confirmed) {
+  const nameToDelete = newStudent.name;
+  const idToDelete = newStudent.id;
+  const index = studentArray.findIndex(student => student.name === nameToDelete && student.id === idToDelete);
+ // If the student was found in the array
+ if (index !== -1) {
+    // Remove the student object from the array
+    studentArray.splice(index, 1);
+    
+    // Log a message to the console to confirm the deletion
+    console.log("Student deleted from array:", studentArray);
+  }
+
+  tr.remove()
+    deleteStudent(newStudent)}
+
+  });
+  studentAmount++;
+  let studentTD = document.getElementById('studentAmount')
+  studentTD.innerText = studentAmount
+  clearStudentForm()
+}
+
+function deleteStudent(theStudent) {
+delete theStudent;
+studentAmount--;
+let studentTD = document.getElementById('studentAmount')
+  studentTD.innerText = studentAmount
+console.log("Student deleted:", theStudent);
+}
+
+function clearStudentForm()
+{
+  document.getElementById('newStudentName').value = ""
+  document.getElementById('newStudentGender').selectedIndex = 0;
+  document.getElementById('sitNear').selectedIndex = 0;
+
+}
+/*
+  function randomize()
+  {
+    if (isRunning) {
+    return;
+  }
+  isRunning = true;
+  let allForbiddenNames = []
+  for(let i=0; i < lockedTextboxes.length; i++)
+  {
+    let result = document.getElementById(lockedTextboxes[i]).value
+    allForbiddenNames.push(result)
+  }
+  let newArray = studentArray.filter(name => !allForbiddenNames.includes(name));
+
+    for(let i=0; i < newArray.length; i++)
+    {
+      let randomNum = getRandomIntInclusive(1 , tableArray.length)
+      let randomNum0or1 = getRandomIntInclusive(0 , 1)
+      if(randomNum0or1 == 0)
+      {
+        let tableID = document.getElementById('leftSeatTable' + randomNum)
+        if(lockedTextboxes.includes(tableID)) 
+        {     
+          i = i - 1;  
+          continue;
+        }
+        tableID.value = newArray[i].name
+      }
+      else{
+        let tableID = document.getElementById('rightSeatTable' + randomNum)
+        if(lockedTextboxes.includes(tableID))
+        {
+          i = i-1; 
+          continue;
+        }
+        tableID.value = newArray[i].name
+      }
+
+    }
+    isRunning = false;
+
+  }
+
+*/
+function randomize()
+{
+  var textboxID = []
+  let x = 1
+  for(let i=0; i<tableArray.length; i++)
+  {  
+    let leftSeater = "leftSeatTable" + x
+    let rightSeater = "rightSeatTable" + x
+    textboxID.push(leftSeater)
+    textboxID.push(rightSeater)
+    x++
+  }
+  const studentsOutside = document.querySelector('.students-outside');
+
+if (studentsOutside) {
+  studentsOutside.parentNode.removeChild(studentsOutside);
+}
+  newRandom(studentArray, textboxID, lockedTextboxes)
+  //assignStudentToTextbox(studentArray, textboxID, lockedTextboxes)
+}
+
+function assignStudentToTextbox(studentNames, textboxIds, lockedTextboxIds) {
+  
+  // Create a copy of the textboxIds array that doesn't include the locked textboxes
+  var availableTextboxIds = textboxIds.filter(function(id) {
+    return !lockedTextboxIds.includes(id);
+  }); 
+  // Iterate through the student names
+  for (var i = 0; i < studentNames.length; i++) {
+    // Check if the current student name is already in a locked textbox
+    var studentName = studentNames[i].name;
+    var studentGender = studentNames[i].sitNear;  //preffered to sit next to
+    var studentCurrentGender = studentNames[i].gender;
+    var studentIsAssigned = lockedTextboxIds.some(function(id) {
+      return document.getElementById(id).value === studentName;
+    });
+    // If the student is not already assigned, assign them to a random available textbox
+    while (studentIsAssigned == false) {
+      var randomIndex = Math.floor(Math.random() * availableTextboxIds.length);
+      var randomTextboxId = availableTextboxIds[randomIndex];
+      if (studentGender == "Anyone")
+      {
+                
+      if (randomTextboxId.charAt(0) == "l")
+      {
+        let idNumPre = randomTextboxId.match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxName = document.getElementById('rightSeatTable' + idNum).value
+        if (otherTextBoxName.length > 0)
+        { 
+          let otherTextBoxGenderPre = studentArray.filter(student => student.name === otherTextBoxName)
+        let otherTextBoxSitNear = otherTextBoxGenderPre[0].sitNear
+        if(otherTextBoxSitNear == studentCurrentGender ||  otherTextBoxSitNear == "Anyone")
+        {
+          document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+        }
+      }
+      else
+      {
+        document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+      }
+      }
+      else if (randomTextboxId.charAt(0) == "r")
+      {
+        let idNumPre = randomTextboxId.match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxName = document.getElementById('leftSeatTable' + idNum).value
+        if (otherTextBoxName.length > 0)
+        { 
+          let otherTextBoxGenderPre = studentArray.filter(student => student.name === otherTextBoxName)
+        let otherTextBoxSitNear = otherTextBoxGenderPre[0].sitNear
+        if(otherTextBoxSitNear == studentCurrentGender ||  otherTextBoxSitNear == "Anyone")
+        {
+          document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+            }
+      }
+      else
+      {
+        document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+      }
+      }
+      
+        /*
+        let idNumPre = randomTextboxId.match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxName = document.getElementById('rightSeatTable' + idNum).value
+        if (otherTextBoxName.length > 0)
+        {
+          let otherTextBoxGenderPre = studentArray.filter(student => student.name === otherTextBoxName)
+        let otherTextBoxSitNear = otherTextBoxGenderPre[0].sitNear
+        if(otherTextBoxSitNear == studentCurrentGender ||  otherTextBoxSitNear == "Anyone")
+        {
+          document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+        }
+        }
+        else
+        {
+          document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+        availableTextboxIds.splice(randomIndex, 1);
+        break;
+        }*/
+      }
+
+      else if (studentGender == "Male")
+      { 
+        
+      if (randomTextboxId.charAt(0) == "l")
+      {
+        let idNumPre = randomTextboxId.match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxName = document.getElementById('rightSeatTable' + idNum).value
+        if (otherTextBoxName.length > 0)
+        { 
+          let otherTextBoxGenderPre = studentArray.filter(student => student.name === otherTextBoxName)
+        let otherTextBoxGender = otherTextBoxGenderPre[0].gender
+        let otherTextBoxSitNear = otherTextBoxGenderPre[0].sitNear
+        if(otherTextBoxGender == "Male" && otherTextBoxSitNear == studentCurrentGender || otherTextBoxGender == "Male" && otherTextBoxSitNear == "Anyone")
+        {
+          document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+        }
+      }
+      else
+      {
+        document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+      }
+      }
+      else if (randomTextboxId.charAt(0) == "r")
+      {
+        let idNumPre = randomTextboxId.match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxName = document.getElementById('leftSeatTable' + idNum).value
+        if (otherTextBoxName.length > 0)
+        { 
+          let otherTextBoxGenderPre = studentArray.filter(student => student.name === otherTextBoxName)
+        let otherTextBoxGender = otherTextBoxGenderPre[0].gender
+        let otherTextBoxSitNear = otherTextBoxGenderPre[0].sitNear
+        if(otherTextBoxGender == "Male" && otherTextBoxSitNear == studentCurrentGender || otherTextBoxGender == "Male" && otherTextBoxSitNear == "Anyone")
+        {
+          document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+            }
+      }
+      else
+      {
+        document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+      }
+      }
+      
+      }
+
+      else if (studentGender == "Female")
+      { 
+        
+      if (randomTextboxId.charAt(0) == "l")
+      {
+        let idNumPre = randomTextboxId.match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxName = document.getElementById('rightSeatTable' + idNum).value
+        if (otherTextBoxName.length > 0)
+        { 
+          let otherTextBoxGenderPre = studentArray.filter(student => student.name === otherTextBoxName)
+        let otherTextBoxGender = otherTextBoxGenderPre[0].gender
+        let otherTextBoxSitNear = otherTextBoxGenderPre[0].sitNear
+        if((otherTextBoxGender == "Female" && otherTextBoxSitNear == studentCurrentGender || otherTextBoxGender == "Female" && otherTextBoxSitNear == "Anyone"))
+        {
+          document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+        }
+      }
+      else
+      {
+        document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+      }
+      }
+      else if (randomTextboxId.charAt(0) == "r")
+      {
+        let idNumPre = randomTextboxId.match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxName = document.getElementById('leftSeatTable' + idNum).value
+        if (otherTextBoxName.length > 0)
+        { 
+        let otherTextBoxGenderPre = studentArray.filter(student => student.name === otherTextBoxName)
+        let otherTextBoxGender = otherTextBoxGenderPre[0].gender
+        let otherTextBoxSitNear = otherTextBoxGenderPre[0].sitNear
+        if((otherTextBoxGender == "Female" && otherTextBoxSitNear == studentCurrentGender || otherTextBoxGender == "Female" && otherTextBoxSitNear == "Anyone"))
+        {
+          document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+        }
+      }
+      else
+      {
+        document.getElementById(randomTextboxId).value = studentName;
+      // remove the selected textbox from the available textboxes
+      availableTextboxIds.splice(randomIndex, 1);
+      break;
+      }
+      }
+      
+      }
+
+
+
+
+
+    }
+  }
+}
+
+  function newRandom(studentNames, textboxIds, lockedTextboxIds)
+  {
+  
+    // Create arrays for locked Students:
+    let lockedMaleNearMale = []
+    let lockedMaleNearFemale = []
+    let lockedFemaleNearFemale = []
+    let lockedFemaleNearMale = []
+    let allLockedStudents = []
+
+    // Get available text boxes (textboxes which arent locked):
+    let availableTextboxIds = textboxIds.filter(function(id) {
+    return !lockedTextboxIds.includes(id);
+  });
+
+  // Clear value of unlocked textboxes:
+  for (let i=0; i<availableTextboxIds.length; i++)
+  {
+    let currentID = availableTextboxIds[i]
+    document.getElementById(currentID).value = ""
+  }
+
+    // Go thru locked textboxes, and get the students from them into matching Arrays:
+    for (let i = 0; i<lockedTextboxIds.length; i++)
+    {
+      let name = document.getElementById(lockedTextboxIds[i]).value
+      if(name.length > 0)
+      {
+        let student = studentArray.find(student => student.name == name);
+        if (typeof student !== 'undefined')
+        {
+          allLockedStudents.push(student)
+          if (student.gender == 'Male' && student.sitNear == 'Male')
+          {
+            lockedMaleNearMale.push(student)
+          }
+          else if (student.gender == 'Male' && student.sitNear == 'Female')
+          {
+            lockedMaleNearFemale.push(student)
+          }
+          else if (student.gender == 'Female' && student.sitNear == 'Male')
+          {
+            lockedFemaleNearMale.push(student)
+          }
+          else if (student.gender == 'Female' && student.sitNear == 'Female')
+          {
+            lockedFemaleNearFemale.push(student)
+          }
+        }
+      }
+    }
+
+    // Create arrays for available Students:
+    let availableMaleNearAnyone = []
+    let availableMaleNearMale = []
+    let availableMaleNearFemale = []
+    let availableFemaleNearAnyone = []
+    let availableFemaleNearFemale = []
+    let availableFemaleNearMale = []
+
+    // Go thru Student array, and put students in matching arrays:
+    let availableStudents = studentNames.filter(name => !allLockedStudents.find(lockedName => lockedName.name === name.name));
+    for(let i=0; i<availableStudents.length; i++)
+    {
+      if (availableStudents[i].gender == 'Male' && availableStudents[i].sitNear == 'Anyone')
+      {
+        availableMaleNearAnyone.push(availableStudents[i])
+      }
+      else if (availableStudents[i].gender == 'Male' && availableStudents[i].sitNear == 'Male')
+      {
+        availableMaleNearMale.push(availableStudents[i])
+      }
+      else if (availableStudents[i].gender == 'Male' && availableStudents[i].sitNear == 'Female')
+      {
+        availableMaleNearFemale.push(availableStudents[i])
+      }
+      else if (availableStudents[i].gender == 'Female' && availableStudents[i].sitNear == 'Anyone')
+      {
+        availableFemaleNearAnyone.push(availableStudents[i])
+      }
+      else if (availableStudents[i].gender == 'Female' && availableStudents[i].sitNear == 'Female')
+      {
+        availableFemaleNearFemale.push(availableStudents[i])
+      }
+      else if (availableStudents[i].gender == 'Female' && availableStudents[i].sitNear == 'Male')
+      {
+        availableFemaleNearMale.push(availableStudents[i])
+      }
+    }
+
+    // Check if locked Arrays empty and Seat Student if needed to:
+    if (lockedMaleNearMale.length > 0)
+    {
+      lockedMaleNearMale.sort(() => Math.random() - 0.5); // Shuffle the array so results are not same as the last randomize
+
+      for (let i=0; i<lockedMaleNearMale.length; i++)
+      {
+        for (let j=0; j<lockedTextboxIds.length; j++)
+        {
+          let theName = document.getElementById(lockedTextboxIds[j]).value 
+          if (theName == lockedMaleNearMale[i].name)  // check if textbox's value == name we currently on
+          {            
+              if (lockedTextboxIds[j].charAt(0) == "l") // Check if Left Seat
+            {
+              // Check if Right Seat is locked or no:
+        let idNumPre = lockedTextboxIds[j].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'rightSeatTable' + idNum
+              if (!lockedTextboxIds.includes(otherTextBoxId))
+              {
+                if (availableMaleNearMale.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableMaleNearMale.length);
+                  let randomName = availableMaleNearMale[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableMaleNearMale.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else if (availableMaleNearAnyone.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableMaleNearAnyone.length);
+                  let randomName = availableMaleNearAnyone[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableMaleNearAnyone.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else
+                {
+                  // PUT ERROR MESSAGE FOR USER
+                }
+              }
+            }
+            else if (lockedTextboxIds[j].charAt(0) == "r") // Check if Right Seat
+            {
+              // Check if Left Seat is locked or no:
+        let idNumPre = lockedTextboxIds[j].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'leftSeatTable' + idNum
+              if (!lockedTextboxIds.includes(otherTextBoxId))
+              {
+                if (availableMaleNearMale.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableMaleNearMale.length);
+                  let randomName = availableMaleNearMale[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableMaleNearMale.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else if (availableMaleNearAnyone.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableMaleNearAnyone.length);
+                  let randomName = availableMaleNearAnyone[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableMaleNearAnyone.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else
+                {
+                  // PUT ERROR MESSAGE FOR USER
+                }
+              }
+            } 
+          
+        }
+      }
+    }
+
+  } 
+  if (lockedMaleNearFemale.length > 0)
+    {
+      lockedMaleNearFemale.sort(() => Math.random() - 0.5); // Shuffle the array so results are not same as the last randomize
+
+      for (let i=0; i<lockedMaleNearFemale.length; i++)
+      {
+        for (let j=0; j<lockedTextboxIds.length; j++)
+        {
+          let theName = document.getElementById(lockedTextboxIds[j]).value 
+          if (theName == lockedMaleNearFemale[i].name)  // check if textbox's value == name we currently on
+          {            
+              if (lockedTextboxIds[j].charAt(0) == "l") // Check if Left Seat
+            {
+              // Check if Right Seat is locked or no:
+        let idNumPre = lockedTextboxIds[j].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'rightSeatTable' + idNum
+              if (!lockedTextboxIds.includes(otherTextBoxId))
+              {
+                if (availableFemaleNearMale.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableFemaleNearMale.length);
+                  let randomName = availableFemaleNearMale[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableFemaleNearMale.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else if (availableFemaleNearAnyone.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableFemaleNearAnyone.length);
+                  let randomName = availableFemaleNearAnyone[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableFemaleNearAnyone.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else
+                {
+                  // PUT ERROR MESSAGE FOR USER
+                }
+              }
+            }
+            else if (lockedTextboxIds[j].charAt(0) == "r") // Check if Right Seat
+            {
+              // Check if Left Seat is locked or no:
+        let idNumPre = lockedTextboxIds[j].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'leftSeatTable' + idNum
+              if (!lockedTextboxIds.includes(otherTextBoxId))
+              {
+                if (availableFemaleNearMale.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableFemaleNearMale.length);
+                  let randomName = availableFemaleNearMale[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableFemaleNearMale.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else if (availableFemaleNearAnyone.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableFemaleNearAnyone.length);
+                  let randomName = availableFemaleNearAnyone[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableFemaleNearAnyone.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else
+                {
+                  // PUT ERROR MESSAGE FOR USER
+                }
+              }
+            } 
+          
+        }
+      }
+    }
+
+  } 
+  if (lockedFemaleNearFemale.length > 0)
+    {
+      lockedFemaleNearFemale.sort(() => Math.random() - 0.5); // Shuffle the array so results are not same as the last randomize
+
+      for (let i=0; i<lockedFemaleNearFemale.length; i++)
+      {
+        for (let j=0; j<lockedTextboxIds.length; j++)
+        {
+          let theName = document.getElementById(lockedTextboxIds[j]).value 
+          if (theName == lockedFemaleNearFemale[i].name)  // check if textbox's value == name we currently on
+          {            
+              if (lockedTextboxIds[j].charAt(0) == "l") // Check if Left Seat
+            {
+              // Check if Right Seat is locked or no:
+        let idNumPre = lockedTextboxIds[j].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'rightSeatTable' + idNum
+              if (!lockedTextboxIds.includes(otherTextBoxId))
+              {
+                if (availableFemaleNearFemale.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableFemaleNearFemale.length);
+                  let randomName = availableFemaleNearFemale[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableFemaleNearFemale.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else if (availableFemaleNearAnyone.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableFemaleNearAnyone.length);
+                  let randomName = availableFemaleNearAnyone[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableFemaleNearAnyone.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else
+                {
+                  // PUT ERROR MESSAGE FOR USER
+                }
+              }
+            }
+            else if (lockedTextboxIds[j].charAt(0) == "r") // Check if Right Seat
+            {
+              // Check if Left Seat is locked or no:
+        let idNumPre = lockedTextboxIds[j].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'leftSeatTable' + idNum
+              if (!lockedTextboxIds.includes(otherTextBoxId))
+              {
+                if (availableFemaleNearFemale.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableFemaleNearFemale.length);
+                  let randomName = availableFemaleNearFemale[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableFemaleNearFemale.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else if (availableFemaleNearAnyone.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableFemaleNearAnyone.length);
+                  let randomName = availableFemaleNearAnyone[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableFemaleNearAnyone.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else
+                {
+                  // PUT ERROR MESSAGE FOR USER
+                }
+              }
+            } 
+          
+        }
+      }
+    }
+
+  } 
+  if (lockedFemaleNearMale.length > 0)
+    {
+      lockedFemaleNearMale.sort(() => Math.random() - 0.5); // Shuffle the array so results are not same as the last randomize
+
+      for (let i=0; i<lockedFemaleNearMale.length; i++)
+      {
+        for (let j=0; j<lockedTextboxIds.length; j++)
+        {
+          let theName = document.getElementById(lockedTextboxIds[j]).value 
+          if (theName == lockedFemaleNearMale[i].name)  // check if textbox's value == name we currently on
+          {            
+              if (lockedTextboxIds[j].charAt(0) == "l") // Check if Left Seat
+            {
+              // Check if Right Seat is locked or no:
+        let idNumPre = lockedTextboxIds[j].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'rightSeatTable' + idNum
+              if (!lockedTextboxIds.includes(otherTextBoxId))
+              {
+                if (availableMaleNearFemale.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableMaleNearFemale.length);
+                  let randomName = availableMaleNearFemale[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableMaleNearFemale.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else if (availableMaleNearAnyone.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableMaleNearAnyone.length);
+                  let randomName = availableMaleNearAnyone[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableMaleNearAnyone.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else
+                {
+                  // PUT ERROR MESSAGE FOR USER
+                }
+              }
+            }
+            else if (lockedTextboxIds[j].charAt(0) == "r") // Check if Right Seat
+            {
+              // Check if Left Seat is locked or no:
+        let idNumPre = lockedTextboxIds[j].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'leftSeatTable' + idNum
+              if (!lockedTextboxIds.includes(otherTextBoxId))
+              {
+                if (availableMaleNearFemale.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableMaleNearFemale.length);
+                  let randomName = availableMaleNearFemale[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableMaleNearFemale.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else if (availableMaleNearAnyone.length > 0)
+                {
+                  let randomIndex = Math.floor(Math.random() * availableMaleNearAnyone.length);
+                  let randomName = availableMaleNearAnyone[randomIndex].name;
+                  document.getElementById(otherTextBoxId).value = randomName;
+                  let index = availableTextboxIds.indexOf(otherTextBoxId);
+                  availableMaleNearAnyone.splice(randomIndex, 1);
+                  availableTextboxIds.splice(index, 1);
+                }
+                else
+                {
+                  // PUT ERROR MESSAGE FOR USER
+                }
+              }
+            } 
+          
+        }
+      }
+    }
+
+  } 
+
+  // Randomly seat Students that have gender req
+  if (availableMaleNearMale.length > 0)
+  {
+    let availableSeatsNearLockedMale = []
+    let emptyTablesForMales = []
+
+    // Check if there are empty Seats near a locked Male who can sit next to anyone
+    for (let i=0; i<lockedTextboxIds.length; i++)
+    {
+
+      if (lockedTextboxIds[i].charAt(0) == "l") // Check if Left Seat
+      {
+        // Check if Right Seat is locked or no:
+        let idNumPre = lockedTextboxIds[i].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'rightSeatTable' + idNum // get right seat id
+        if (!lockedTextboxIds.includes(otherTextBoxId)) // if not locked, check locked student's requirments
+        {
+          let theName = document.getElementById(lockedTextboxIds[i]).value
+          let student = studentNames.find(s => s.name == theName);
+          if (student !== undefined)
+          {
+            if (student.gender == 'Male' && student.sitNear == 'Anyone')
+          {
+            availableSeatsNearLockedMale.push(otherTextBoxId)
+          }
+
+          }
+
+        }
+      }
+      else if (lockedTextboxIds[i].charAt(0) == "r") // Check if Right Seat
+      {
+        // Check if Left Seat is locked or no:
+        let idNumPre = lockedTextboxIds[i].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'leftSeatTable' + idNum // get left seat id
+        if (!lockedTextboxIds.includes(otherTextBoxId)) // if not locked, check locked student's requirments
+        {
+          let theName = document.getElementById(lockedTextboxIds[i]).value
+          let student = studentNames.find(s => s.name == theName);
+          if (student.gender == 'Male' && student.sitNear == 'Anyone')
+          {
+            availableSeatsNearLockedMale.push(otherTextBoxId)
+          }
+
+        }
+      }
+    }
+
+    // if there are Empty tables push them into array:
+    for (let i = 0; i < availableTextboxIds.length; i++) {
+    let currentTextbox = availableTextboxIds[i];
+    if (currentTextbox.charAt(0) == "l")
+    {
+      let idNumPre = currentTextbox.match(/\d+/g);  // Get id of other Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+      if(availableTextboxIds.includes(otherTextBoxId))
+      {
+        emptyTablesForMales.push(currentTextbox);
+        i++
+      }
+    }
+}
+
+  // Loop to Seat the Students:
+    availableMaleNearMale.sort(() => Math.random() - 0.5); // Shuffle the array so results are not same as the last randomize
+    for (let i=0; i<availableMaleNearMale.length; i++)
+    {
+      // first we seat next to locked textboxes that are relevant:
+      if (availableSeatsNearLockedMale.length > 0)
+      {
+        let randomIndex = Math.floor(Math.random() * availableSeatsNearLockedMale.length);
+        document.getElementById(availableSeatsNearLockedMale[randomIndex]).value = availableMaleNearMale[i].name;
+        let index = availableTextboxIds.indexOf(availableSeatsNearLockedMale[randomIndex]);
+        availableSeatsNearLockedMale.splice(randomIndex, 1);  // remove the Seat from array
+        availableTextboxIds.splice(index, 1); // remove the Seat from available textbox array
+      }
+      // next, we Seat them in Tables that are Empty:
+      else if (emptyTablesForMales.length > 0)
+      {
+        let x = i + 1 // 'x' will be used to access the next student in the array, since we Seat 2 students in the Table. 
+        if (availableMaleNearMale.length > x) // if there's more than 2 Students in this array, we can Seat both of them together.
+        {
+          let randomIndex = Math.floor(Math.random() * emptyTablesForMales.length); // Get random empty leftSeat id
+          document.getElementById(emptyTablesForMales[randomIndex]).value = availableMaleNearMale[i].name // Seat student in the leftSeat
+          let idNumPre = emptyTablesForMales[randomIndex].match(/\d+/g);  // Get id of Right Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+          document.getElementById(otherTextBoxId).value = availableMaleNearMale[x].name // Seat next student from array in the rightSeat
+          let index = availableTextboxIds.indexOf(emptyTablesForMales[randomIndex]);
+          emptyTablesForMales.splice(randomIndex, 1); // Remove table from availables
+          availableTextboxIds.splice(index, 2); // Remove both left&right Seats from availables
+          i++;
+        }
+        else if (availableMaleNearAnyone.length > 0)
+        {
+          let randomIndex = Math.floor(Math.random() * emptyTablesForMales.length);
+          document.getElementById(emptyTablesForMales[randomIndex]).value = availableMaleNearMale[i].name
+          let randomIndex2 = Math.floor(Math.random() * availableMaleNearAnyone.length);
+          let idNumPre = emptyTablesForMales[randomIndex].match(/\d+/g);  // Get id of Right Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+          document.getElementById(otherTextBoxId).value = availableMaleNearAnyone[randomIndex2].name
+          let index = availableTextboxIds.indexOf(emptyTablesForMales[randomIndex]);
+          availableMaleNearAnyone.splice(randomIndex2, 1);
+          emptyTablesForMales.splice(randomIndex, 1);
+          availableTextboxIds.splice(index, 2);
+        }
+        else {
+          callErrorStudent(availableMaleNearMale[i].name)
+        }
+      }
+      else
+      {
+        callErrorStudent(availableMaleNearMale[i].name)
+      }
+    }
+  }
+  if (availableFemaleNearFemale.length > 0)
+  {
+    let availableSeatsNearLockedFemale = []
+    let emptyTablesForFemales = []
+
+    // Check if there are empty Seats near a locked Male who can sit next to anyone
+    for (let i=0; i<lockedTextboxIds.length; i++)
+    {
+
+      if (lockedTextboxIds[i].charAt(0) == "l") // Check if Left Seat
+      {
+        // Check if Right Seat is locked or no:
+        let idNumPre = lockedTextboxIds[i].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'rightSeatTable' + idNum // get right seat id
+        if (!lockedTextboxIds.includes(otherTextBoxId)) // if not locked, check locked student's requirments
+        {
+          let theName = document.getElementById(lockedTextboxIds[i]).value
+          let student = studentNames.find(s => s.name == theName);
+          if (student !== undefined)
+          {
+            if (student.gender == 'Female' && student.sitNear == 'Anyone')
+          {
+            availableSeatsNearLockedFemale.push(otherTextBoxId)
+          }
+
+          }
+
+        }
+      }
+      else if (lockedTextboxIds[i].charAt(0) == "r") // Check if Right Seat
+      {
+        // Check if Left Seat is locked or no:
+        let idNumPre = lockedTextboxIds[i].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'leftSeatTable' + idNum // get left seat id
+        if (!lockedTextboxIds.includes(otherTextBoxId)) // if not locked, check locked student's requirments
+        {
+          let theName = document.getElementById(lockedTextboxIds[i]).value
+          let student = studentNames.find(s => s.name == theName);
+          if (student.gender == 'Female' && student.sitNear == 'Anyone')
+          {
+            availableSeatsNearLockedFemale.push(otherTextBoxId)
+          }
+
+        }
+      }
+    }
+
+    // if there are Empty tables push them into array:
+    for (let i = 0; i < availableTextboxIds.length; i++) {
+    let currentTextbox = availableTextboxIds[i];
+    if (currentTextbox.charAt(0) == "l")
+    {
+      let idNumPre = currentTextbox.match(/\d+/g);  // Get id of other Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+      if(availableTextboxIds.includes(otherTextBoxId))
+      {
+        emptyTablesForFemales.push(currentTextbox);
+        i++
+      }
+    }
+}
+
+  // Loop to Seat the Students:
+    availableFemaleNearFemale.sort(() => Math.random() - 0.5); // Shuffle the array so results are not same as the last randomize
+    for (let i=0; i<availableFemaleNearFemale.length; i++)
+    {
+      // first we seat next to locked textboxes that are relevant:
+      if (availableSeatsNearLockedFemale.length > 0)
+      {
+        let randomIndex = Math.floor(Math.random() * availableSeatsNearLockedFemale.length);
+        document.getElementById(availableSeatsNearLockedFemale[randomIndex]).value = availableFemaleNearFemale[i].name;
+        let index = availableTextboxIds.indexOf(availableSeatsNearLockedFemale[randomIndex]);
+        availableSeatsNearLockedFemale.splice(randomIndex, 1);  // remove the Seat from array
+        availableTextboxIds.splice(index, 1); // remove the Seat from available textbox array
+      }
+      // next, we Seat them in Tables that are Empty:
+      else if (emptyTablesForFemales.length > 0)
+      {
+        let x = i + 1 // 'x' will be used to access the next student in the array, since we Seat 2 students in the Table. 
+        if (availableFemaleNearFemale.length > x) // if there's more than 2 Students in this array, we can Seat both of them together.
+        {
+          let randomIndex = Math.floor(Math.random() * emptyTablesForFemales.length); // Get random empty leftSeat id
+          document.getElementById(emptyTablesForFemales[randomIndex]).value = availableFemaleNearFemale[i].name // Seat student in the leftSeat
+          let idNumPre = emptyTablesForFemales[randomIndex].match(/\d+/g);  // Get id of Right Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+          document.getElementById(otherTextBoxId).value = availableFemaleNearFemale[x].name // Seat next student from array in the rightSeat
+          let index = availableTextboxIds.indexOf(emptyTablesForFemales[randomIndex]);
+          emptyTablesForFemales.splice(randomIndex, 1); // Remove table from availables
+          availableTextboxIds.splice(index, 2); // Remove both left&right Seats from availables
+          i++;
+        }
+        else if (availableFemaleNearAnyone.length > 0)
+        {
+          let randomIndex = Math.floor(Math.random() * emptyTablesForFemales.length);
+          document.getElementById(emptyTablesForFemales[randomIndex]).value = availableFemaleNearFemale[i].name
+          let randomIndex2 = Math.floor(Math.random() * availableFemaleNearAnyone.length);
+          let idNumPre = emptyTablesForFemales[randomIndex].match(/\d+/g);  // Get id of Right Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+          document.getElementById(otherTextBoxId).value = availableFemaleNearAnyone[randomIndex2].name
+          let index = availableTextboxIds.indexOf(emptyTablesForFemales[randomIndex]);
+          availableFemaleNearAnyone.splice(randomIndex2, 1);
+          emptyTablesForFemales.splice(randomIndex, 1);
+          availableTextboxIds.splice(index, 2);
+
+        }
+        else {
+          callErrorStudent(availableFemaleNearFemale[i].name)
+        }
+      }
+      else
+      {
+        callErrorStudent(availableFemaleNearFemale[i].name)
+      }
+    }
+  }
+
+  if (availableMaleNearFemale.length > 0)
+  {
+    let availableSeatsNearLockedFemale2 = []
+    let emptyTablesForMales2 = []
+
+    // Check if there are empty Seats near a locked Feale who can sit next to anyone
+    for (let i=0; i<lockedTextboxIds.length; i++)
+    {
+
+      if (lockedTextboxIds[i].charAt(0) == "l") // Check if Left Seat
+      {
+        // Check if Right Seat is locked or no:
+        let idNumPre = lockedTextboxIds[i].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'rightSeatTable' + idNum // get right seat id
+        if (!lockedTextboxIds.includes(otherTextBoxId)) // if not locked, check locked student's requirments
+        {
+          let theName = document.getElementById(lockedTextboxIds[i]).value
+          let student = studentNames.find(s => s.name == theName);
+          if (student !== undefined)
+          {
+            if (student.gender == 'Female' && student.sitNear == 'Anyone' || student.gender == 'Female' && student.sitNear == 'Male')
+          {
+            availableSeatsNearLockedFemale2.push(otherTextBoxId)
+          }
+
+          }
+
+        }
+      }
+      else if (lockedTextboxIds[i].charAt(0) == "r") // Check if Right Seat
+      {
+        // Check if Left Seat is locked or no:
+        let idNumPre = lockedTextboxIds[i].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'leftSeatTable' + idNum // get left seat id
+        if (!lockedTextboxIds.includes(otherTextBoxId)) // if not locked, check locked student's requirments
+        {
+          let theName = document.getElementById(lockedTextboxIds[i]).value
+          let student = studentNames.find(s => s.name == theName);
+          if (student.gender == 'Female' && student.sitNear == 'Anyone')
+          {
+            availableSeatsNearLockedFemale2.push(otherTextBoxId)
+          }
+
+        }
+      }
+    }
+
+    // if there are Empty tables push them into array:
+    for (let i = 0; i < availableTextboxIds.length; i++) {
+    let currentTextbox = availableTextboxIds[i];
+    if (currentTextbox.charAt(0) == "l")
+    {
+      let idNumPre = currentTextbox.match(/\d+/g);  // Get id of other Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+      if(availableTextboxIds.includes(otherTextBoxId))
+      {
+        emptyTablesForMales2.push(currentTextbox);
+        i++
+      }
+    }
+}
+
+
+  // Loop to Seat the Students:
+    availableMaleNearFemale.sort(() => Math.random() - 0.5); // Shuffle the array so results are not same as the last randomize
+    for (let i=0; i<availableMaleNearFemale.length; i++)
+    {
+      // first we seat next to locked textboxes that are relevant:
+      if (availableSeatsNearLockedFemale2.length > 0)
+      {
+        let randomIndex = Math.floor(Math.random() * availableSeatsNearLockedFemale2.length);
+        document.getElementById(availableSeatsNearLockedFemale2[randomIndex]).value = availableMaleNearFemale[i].name;
+        let index = availableTextboxIds.indexOf(availableSeatsNearLockedFemale2[randomIndex]);
+        availableSeatsNearLockedFemale2.splice(randomIndex, 1);  // remove the Seat from array
+        availableTextboxIds.splice(index, 1); // remove the Seat from available textbox array
+      }
+      // next, we Seat them in Tables that are Empty:
+      else if (emptyTablesForMales2.length > 0)
+      {
+        if (availableFemaleNearAnyone.length > 0)
+        {
+          let randomIndex = Math.floor(Math.random() * emptyTablesForMales2.length);
+          document.getElementById(emptyTablesForMales2[randomIndex]).value = availableMaleNearFemale[i].name
+          let randomIndex2 = Math.floor(Math.random() * availableFemaleNearAnyone.length);
+          let idNumPre = emptyTablesForMales2[randomIndex].match(/\d+/g);  // Get id of Right Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+          document.getElementById(otherTextBoxId).value = availableFemaleNearAnyone[randomIndex2].name
+          let index = availableTextboxIds.indexOf(emptyTablesForMales2[randomIndex]);
+          availableFemaleNearAnyone.splice(randomIndex2, 1);
+          emptyTablesForMales2.splice(randomIndex, 1);
+          availableTextboxIds.splice(index, 2);
+        }
+        else if (availableFemaleNearMale.length > 0) {
+          let randomIndex = Math.floor(Math.random() * emptyTablesForMales2.length);
+          document.getElementById(emptyTablesForMales2[randomIndex]).value = availableMaleNearFemale[i].name
+          let randomIndex2 = Math.floor(Math.random() * availableFemaleNearMale.length);
+          let idNumPre = emptyTablesForMales2[randomIndex].match(/\d+/g);  // Get id of Right Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+          document.getElementById(otherTextBoxId).value = availableFemaleNearMale[randomIndex2].name
+          let index = availableTextboxIds.indexOf(emptyTablesForMales2[randomIndex]);
+          availableFemaleNearMale.splice(randomIndex2, 1);
+          emptyTablesForMales2.splice(randomIndex, 1);
+          availableTextboxIds.splice(index, 2);
+        }
+        else {
+          callErrorStudent(availableMaleNearFemale[i].name)
+        }
+      }
+      else
+      {
+      callErrorStudent(availableMaleNearFemale[i].name)
+      }
+    }
+  }
+  if (availableFemaleNearMale.length > 0)
+  {
+    let availableSeatsNearLockedMale2 = []
+    let emptyTablesForFemales2 = []
+
+    // Check if there are empty Seats near a locked Feale who can sit next to anyone
+    for (let i=0; i<lockedTextboxIds.length; i++)
+    {
+
+      if (lockedTextboxIds[i].charAt(0) == "l") // Check if Left Seat
+      {
+        // Check if Right Seat is locked or no:
+        let idNumPre = lockedTextboxIds[i].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'rightSeatTable' + idNum // get right seat id
+        if (!lockedTextboxIds.includes(otherTextBoxId)) // if not locked, check locked student's requirments
+        {
+          let theName = document.getElementById(lockedTextboxIds[i]).value
+          let student = studentNames.find(s => s.name == theName);
+          if (student !== undefined)
+          {
+            if (student.gender == 'Male' && student.sitNear == 'Anyone')
+          {
+            availableSeatsNearLockedMale2.push(otherTextBoxId)
+          }
+
+          }
+
+        }
+      }
+      else if (lockedTextboxIds[i].charAt(0) == "r") // Check if Right Seat
+      {
+        // Check if Left Seat is locked or no:
+        let idNumPre = lockedTextboxIds[i].match(/\d+/g);
+        let idNum = parseInt(idNumPre)
+        let otherTextBoxId = 'leftSeatTable' + idNum // get left seat id
+        if (!lockedTextboxIds.includes(otherTextBoxId)) // if not locked, check locked student's requirments
+        {
+          let theName = document.getElementById(lockedTextboxIds[i]).value
+          let student = studentNames.find(s => s.name == theName);
+          if (student.gender == 'Male' && student.sitNear == 'Anyone' || student.gender == 'Male' && student.sitNear == 'Female' )
+          {
+            availableSeatsNearLockedMale2.push(otherTextBoxId)
+          }
+
+        }
+      }
+    }
+
+    // if there are Empty tables push them into array:
+    for (let i = 0; i < availableTextboxIds.length; i++) {
+    let currentTextbox = availableTextboxIds[i];
+    if (currentTextbox.charAt(0) == "l")
+    {
+      let idNumPre = currentTextbox.match(/\d+/g);  // Get id of other Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+      if(availableTextboxIds.includes(otherTextBoxId))
+      {
+        emptyTablesForFemales2.push(currentTextbox);
+        i++
+      }
+    }
+}
+
+  // Loop to Seat the Students:
+    availableFemaleNearMale.sort(() => Math.random() - 0.5); // Shuffle the array so results are not same as the last randomize
+    for (let i=0; i<availableFemaleNearMale.length; i++)
+    {
+      // first we seat next to locked textboxes that are relevant:
+      if (availableSeatsNearLockedMale2.length > 0)
+      {
+        let randomIndex = Math.floor(Math.random() * availableSeatsNearLockedMale2.length);
+        document.getElementById(availableSeatsNearLockedMale2[randomIndex]).value = availableFemaleNearMale[i].name;
+        let index = availableTextboxIds.indexOf(availableSeatsNearLockedMale2[randomIndex]);
+        availableSeatsNearLockedMale2.splice(randomIndex, 1);  // remove the Seat from array
+        availableTextboxIds.splice(index, 1); // remove the Seat from available textbox array
+      }
+      // next, we Seat them in Tables that are Empty:
+      else if (emptyTablesForFemales2.length > 0)
+      {
+        if (availableMaleNearAnyone.length > 0)
+        {
+          let randomIndex = Math.floor(Math.random() * emptyTablesForFemales2.length);
+          document.getElementById(emptyTablesForFemales2[randomIndex]).value = availableFemaleNearMale[i].name
+          let randomIndex2 = Math.floor(Math.random() * availableMaleNearAnyone.length);
+          let idNumPre = emptyTablesForFemales2[randomIndex].match(/\d+/g);  // Get id of Right Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+          document.getElementById(otherTextBoxId).value = availableMaleNearAnyone[randomIndex2].name
+          let index = availableTextboxIds.indexOf(emptyTablesForFemales2[randomIndex]);
+          availableMaleNearAnyone.splice(randomIndex2, 1);
+          emptyTablesForFemales2.splice(randomIndex, 1);
+          availableTextboxIds.splice(index, 2);
+        } else if (availableMaleNearFemale.length > 0) {
+          let randomIndex = Math.floor(Math.random() * emptyTablesForFemales2.length);
+          document.getElementById(emptyTablesForFemales2[randomIndex]).value = availableFemaleNearMale[i].name
+          let randomIndex2 = Math.floor(Math.random() * availableMaleNearFemale.length);
+          let idNumPre = emptyTablesForFemales2[randomIndex].match(/\d+/g);  // Get id of Right Seat
+          let idNum = parseInt(idNumPre)
+          let otherTextBoxId = 'rightSeatTable' + idNum
+          document.getElementById(otherTextBoxId).value = availableMaleNearFemale[randomIndex2].name
+          let index = availableTextboxIds.indexOf(emptyTablesForFemales2[randomIndex]);
+          availableMaleNearFemale.splice(randomIndex2, 1);
+          emptyTablesForFemales2.splice(randomIndex, 1);
+          availableTextboxIds.splice(index, 2);
+        }  else {
+          callErrorStudent(availableFemaleNearMale[i].name)
+        }
+      }
+      else
+      {
+        callErrorStudent(availableFemaleNearMale[i].name)
+      }
+    }
+  }
+
+  let availableNearAnyone = [...availableMaleNearAnyone, ...availableFemaleNearAnyone]; // connect the arrays
+  if (availableNearAnyone.length > 0)
+  {
+    availableNearAnyone.sort(() => Math.random() - 0.5);
+    for (let i = 0; i< availableNearAnyone.length; i++)
+    {
+      let randomIndex = Math.floor(Math.random() * availableTextboxIds.length);
+      if(availableTextboxIds.length > 0) {
+        document.getElementById(availableTextboxIds[randomIndex]).value = availableNearAnyone[i].name
+    availableTextboxIds.splice(randomIndex, 1);
+      }
+    }
+
+  }
+}// End of randomize function
+
+
+
+  function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
+
+const resizeable = document.querySelector('.ClassRoomDiv');
+const resizeHandle = document.querySelector('.resize-handle');
+let isResizing = false;
+let currentX;
+let currentY;
+let currentWidth;
+let currentHeight;
+
+resizeHandle.addEventListener('mousedown', function(e) {
+  isResizing = true;
+  currentX = e.clientX;
+  currentY = e.clientY;
+  currentWidth = resizeable.offsetWidth;
+  currentHeight = resizeable.offsetHeight;
+});
+
+document.addEventListener('mouseup', function() {
+  isResizing = false;
+});
+
+document.addEventListener('mousemove', function(e) {
+  if (!isResizing) return;
+  let newWidth = currentWidth + (e.clientX - currentX);
+  let newHeight = currentHeight + (e.clientY - currentY);
+
+  if (newWidth > window.innerWidth - 200) {
+    newWidth = window.innerWidth - 200;
+  }
+  if (newHeight > window.innerHeight - 50) {
+    newHeight = window.innerHeight - 50;
+  }
+
+  resizeable.style.width = newWidth + 'px';
+  resizeable.style.height = newHeight + 'px';
+});
+
+let tableHeightNow = 9
+let tableWidthNow = 16
+
+let changeTableSizeButton = document.getElementById('changeTableSize')
+changeTableSizeButton.addEventListener("click" , () => {
+  let theHeight = document.getElementById('tableHeight').value
+  let theWidth = document.getElementById('tableWidth').value
+  tableHeightNow = theHeight;
+  tableWidthNow = theWidth;
+  
+  if(theHeight > 100 || theHeight < 1 || theWidth > 100 || theWidth < 1)
+  {
+    alert('ערך הגובה והרוחב חייב להיות בין 1 ל100')
+    return;
+  }
+
+  theHeight = theHeight + "%";
+  theWidth = theWidth + "%";
+  const root = document.documentElement;
+  
+root.style.setProperty('--table-width', theWidth);
+root.style.setProperty('--table-height', theHeight);
+
+})
+
+function addStudentBulk() {
+  let studentsToAdd420 = document.getElementById('bulkStudentTextbox').value
+  let studentsToAdd = studentsToAdd420.trim()
+  if(studentsToAdd.charAt(studentsToAdd.length - 1) == ',')
+  {
+   let studentsToAdd1 = studentsToAdd.slice(0, -1); 
+   studentsToAdd = studentsToAdd1
+  } 
+  let messedArray = studentsToAdd.split(",");
+  if (messedArray.length % 3 !== 0) {
+      alert("יש לתקן את הרשימה ולנסות שוב. הפורמט להכנסת התלמידים הוא: שם, מין, יושב ליד (דוגמא: אבי כהן, בן, בנים, נועה לוי, בת, כולם)")    
+      return;
+  }
+
+  let errorAlready = false; // bool to know if 'Error div' already has an error inside
+  for (let i = 0; i < messedArray.length; i += 3) {
+    let aName1 = messedArray[i].trim();
+    let aName = aName1.replace(/\s+/g, ' ');
+    let aGender = messedArray[i + 1].trim();
+    let aSitNear = messedArray[i + 2].trim();
+    let aStudent = new Student;
+    aStudent.name = aName;
+
+    if(aGender == "בן") {
+      aStudent.gender = "Male"
+    } else if (aGender == "בת") {
+      aStudent.gender = "Female"
+    } else {        // If user had a typo
+      errorAlready = true;
+      let errorDiv =  document.getElementById('errorBulkDiv')
+      let errorContent = document.getElementById('errorContent')
+      let errorCountdown = document.getElementById('errorCountdown')
+      let errorXbutton = document.getElementById('errorXbutton')
+
+      errorDiv.style.backgroundColor = "#ffabab"
+
+      if (errorAlready == true) {   // Add a <br> if theres already an error
+      let br = document.createElement("br")
+      errorDiv.appendChild(br)
+     }
+
+     errorContent.innerText += "לא ניתן להכניס את " + aName + " בגלל ש '" + aGender + "' לא מוכר למערכת•"
+
+     const errorDivColor = setTimeout(()=>{   // Reset the error Div
+        errorDiv.style.backgroundColor = "transparent"
+        errorContent.innerText = ""
+        errorXbutton.innerText = ""
+        errorXbutton.removeEventListener("click", clickHandler);
+        errorXbutton.style.cursor = "default"
+      }, 15000);
+
+      let loopCounter = 14;
+errorCountdown.innerText = "15";
+
+const countdownInterval = setInterval(() => {
+  if (loopCounter > 0) {
+    errorCountdown.innerText = loopCounter;
+  } else {
+    errorCountdown.innerText = "";
+    clearInterval(countdownInterval); // Clear the interval when the countdown is finished
+    errorXbutton.style.cursor = "default"
+  }
+  loopCounter--;
+}, 1000);
+
+      errorXbutton.innerText = "X"
+      errorXbutton.style.cursor = "pointer"
+      errorXbutton.addEventListener("click", function clickHandler() {
+  errorDiv.style.backgroundColor = "transparent"
+  errorContent.innerText = ""
+  errorXbutton.innerText = ""
+  errorCountdown.innerText = ""
+  loopCounter = 0;
+  clearTimeout(errorDivColor);
+  errorXbutton.style.cursor = "default"
+
+  // Remove the event listener
+  errorXbutton.removeEventListener("click", clickHandler);
+});
+
+      delete(aStudent)
+      continue;
+    }
+
+    if(aSitNear == "כולם")
+    {
+      aStudent.sitNear = "Anyone"
+    } else if (aSitNear == "בנים") {
+      aStudent.sitNear = "Male"
+    } else if (aSitNear == "בנות") {
+      aStudent.sitNear = "Female"
+    } else {
+      console.log("ERROR with " + aName + " couldnt understand sitNear")
+      delete(aStudent)
+      continue;
+    }
+
+    
+    studentArray.push(aStudent);
+    studentAmount++;
+    
+  let list = document.getElementById('studentTable')
+  let tr = document.createElement("tr")
+  let tdName = document.createElement("td")
+  let tdGender = document.createElement("td")
+  let tdSitnear = document.createElement("td")
+  let tdOptions = document.createElement("td")
+  let genderImg = document.createElement("img")
+
+
+  tdName.innerText = aName
+  if(aStudent.gender == "Male")
+  {
+    genderImg.src = "https://i.ibb.co/Q90kK4P/male-student.png"
+    genderImg.className = "gender-img-male"
+  } else {
+    genderImg.src = "https://i.ibb.co/GFqPFqx/woman.png"
+    genderImg.className = "gender-img-female"
+
+  }
+  if(aStudent.sitNear == "Anyone") {
+    tdSitnear.innerText = "כולם"
+  } else if (aStudent.sitNear == "Male") {
+    tdSitnear.innerText = "רק בנים"
+  } else {
+    tdSitnear.innerText = "רק בנות"
+  }
+
+  let deleteButton = document.createElement("img")
+  deleteButton.src="https://i.ibb.co/mTXWpmF/bin.png"
+  tdOptions.appendChild(deleteButton)
+
+  let editButton = document.createElement("img")
+  editButton.src = "https://i.ibb.co/gz8CYFx/pencil.png"
+  tdOptions.appendChild(editButton)
+
+
+  tdGender.appendChild(genderImg)
+  tr.appendChild(tdOptions)
+  tr.appendChild(tdSitnear)
+  tr.appendChild(tdName)
+  tr.appendChild(tdGender)
+
+  list.appendChild(tr)
+  
+  
+editButton.addEventListener("click" , () => {
+  let imgElement = tdGender.querySelector('img');
+  tdGender.textContent = "";
+  let imgSrc = imgElement.src;
+
+  let maleImg = document.createElement("img")
+  maleImg.src = "https://i.ibb.co/Q90kK4P/male-student.png"
+
+  let femaleImg = document.createElement("img")
+  femaleImg.src = "https://i.ibb.co/GFqPFqx/woman.png"
+
+  let updateGenderSelect = document.createElement("select")
+
+  let option1 = document.createElement("option");
+option1.value = "Male";
+option1.text = "בן";
+
+let option2 = document.createElement("option");
+option2.value = "Female";
+option2.text = "בת";
+
+if(imgSrc == "https://i.ibb.co/Q90kK4P/male-student.png")
+{
+  option1.selected = true;
+} else {
+  option2.selected = true;
+}
+
+updateGenderSelect.add(option1);
+updateGenderSelect.add(option2);
+
+updateGenderSelect.className = "update-gender-select"
+tdGender.appendChild(updateGenderSelect)
+
+let oldName = tdName.innerText
+tdName.textContent = "";
+let updateNameTextbox = document.createElement("input")
+updateNameTextbox.value = oldName
+updateNameTextbox.className = "update-name-text"
+tdName.appendChild(updateNameTextbox)
+
+let oldSitnear = tdSitnear.innerText
+tdSitnear.textContent = "";
+let updateSitnearSelect = document.createElement("select")
+
+let anyoneOption = document.createElement("option")
+anyoneOption.value = "Anyone";
+anyoneOption.text = "כולם";
+let maleOption = document.createElement("option")
+maleOption.value = "Male";
+maleOption.text = "רק בנים";
+let femaleOption = document.createElement("option")
+femaleOption.value = "Female";
+femaleOption.text = "רק בנות";
+
+updateSitnearSelect.add(anyoneOption);
+updateSitnearSelect.add(maleOption);
+updateSitnearSelect.add(femaleOption);
+
+if(oldSitnear == "כולם")
+{
+  anyoneOption.selected = true;
+} else if(oldSitnear == "רק בנים"){
+  maleOption.selected = true;
+} else if(oldSitnear == "רק בנות"){
+  femaleOption.selected = true;
+}
+updateSitnearSelect.className = "update-sitnear-select"
+tdSitnear.appendChild(updateSitnearSelect)
+
+tdOptions.textContent = "";
+
+let xButton = document.createElement("img")
+xButton.src="https://i.ibb.co/y8Sc0yp/cancel.png"
+
+
+let vButton = document.createElement("img")
+vButton.src="https://i.ibb.co/ct4WNdJ/check-mark.png"
+tdOptions.appendChild(vButton)
+tdOptions.appendChild(xButton)
+
+xButton.addEventListener("click", ()=>{
+  tdGender.textContent = "";
+tdGender.appendChild(genderImg)
+
+tdName.textContent = "";
+tdName.innerText = aStudent.name
+
+tdSitnear.textContent = "";
+if(aStudent.sitNear == "Anyone") {
+    tdSitnear.innerText = "כולם"
+  } else if (aStudent.sitNear == "Male") {
+    tdSitnear.innerText = "רק בנים"
+  } else {
+    tdSitnear.innerText = "רק בנות"
+  }
+
+  tdOptions.textContent = "";
+  tdOptions.appendChild(deleteButton)
+  tdOptions.appendChild(editButton)
+
+})
+
+vButton.addEventListener("click" , ()=>{
+  if(updateNameTextbox.value.length < 1)
+  {
+    alert('שם חייב להכיל תווים')
+    return;
+  }
+
+  aStudent.name = updateNameTextbox.value
+  aStudent.gender = updateGenderSelect.value
+  aStudent.sitNear = updateSitnearSelect.value
+  aName = updateNameTextbox.value
+  aSitNear = updateSitnearSelect.value
+
+  for (let i = 0; i < studentArray.length; i++) {
+  if (studentArray[i].id === aStudent.id) {
+    studentArray[i].name = updateNameTextbox.value;
+    studentArray[i].gender = updateGenderSelect.value;
+    studentArray[i].sitNear = updateSitnearSelect.value
+    break;
+  } }
+  
+  tdGender.textContent = "";
+if(updateGenderSelect.value == "Male")
+  {
+    genderImg.src = "https://i.ibb.co/Q90kK4P/male-student.png"
+    genderImg.className = "gender-img-male"
+  } else {
+    genderImg.src = "https://i.ibb.co/GFqPFqx/woman.png"
+    genderImg.className = "gender-img-female"
+  }
+  tdGender.appendChild(genderImg)
+
+  tdName.textContent = "";
+  tdName.innerText = updateNameTextbox.value;
+
+  tdSitnear.textContent = "";
+  if(updateSitnearSelect.value == "Anyone") {
+    tdSitnear.innerText = "כולם"
+  } else if (updateSitnearSelect.value == "Male") {
+    tdSitnear.innerText = "רק בנים"
+  } else {
+    tdSitnear.innerText = "רק בנות"
+  }
+
+  tdOptions.textContent = "";
+  tdOptions.appendChild(deleteButton)
+  tdOptions.appendChild(editButton)
+
+})
+
+
+})
+  
+deleteButton.addEventListener("click", () => {
+    const confirmed = window.confirm("האם אתה בטוח שאתה רוצה למחוק את " + aName + " מהרשימה?");
+
+if (confirmed) {
+  const nameToDelete = aStudent.name;
+  const idToDelete = aStudent.id;
+  const index = studentArray.findIndex(student => student.name === nameToDelete && student.id === idToDelete);
+ // If the student was found in the array
+ if (index !== -1) {
+    // Remove the student object from the array
+    studentArray.splice(index, 1);
+    
+    // Log a message to the console to confirm the deletion
+    console.log("Student deleted from array:", studentArray);
+  }
+
+  tr.remove()
+    deleteStudent(aStudent)}
+
+  });
+  let studentTD = document.getElementById('studentAmount')
+  studentTD.innerText = studentAmount
+  }  
+clearStudentBulkForm()
+}
+function clearStudentBulkForm() {
+  document.getElementById('bulkStudentTextbox').value = ""
+}
+
+function calculateDivSize() {
+  let divElement = document.getElementById('bigBlock')
+  const width = divElement.clientWidth;
+  const height = divElement.clientHeight;
+  return { width, height };
+}
+
+function positionTablesFourInRow() {
+let tableAmount = tableDivsArray.length
+const divSize = calculateDivSize();
+let valuesWidth = [
+  parseInt(tableWidthNow / 3) + "%",
+  parseInt(tableWidthNow) + 12.5 + "%",
+  parseInt(tableWidthNow) + 37.5 + "%",
+  parseInt(tableWidthNow) + 62.5 + "%"
+];
+
+if(tableAmount > 0 && tableAmount < 5) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let topPlacement = parseInt(tableHeightNow) + 30 + "%";
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.top = topPlacement;
+    tableDivsArray[i].style.left = leftPlacement;
+  }
+} else if(tableAmount > 4 && tableAmount < 9) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 4) {
+    topPlacement = parseInt(tableHeightNow) + 15 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 35 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+} else if(tableAmount > 8 && tableAmount < 13) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 4) {
+    topPlacement = parseInt(tableHeightNow) + 10 + "%";
+  } else if (i > 4 && i < 9) {
+    topPlacement = parseInt(tableHeightNow) + 30 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 50 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+} else if(tableAmount > 12 && tableAmount < 17) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 4) {
+    topPlacement = parseInt(tableHeightNow) + 5 + "%";
+  } else if (i > 4 && i < 9) {
+    topPlacement = parseInt(tableHeightNow) + 25 + "%";
+  } else if (i > 8 && i < 13) {
+    topPlacement = parseInt(tableHeightNow) + 45 + "%";
+  }
+  else {
+    topPlacement = parseInt(tableHeightNow) + 65 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+} else if(tableAmount > 16 && tableAmount < 21) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 4) {
+    topPlacement = parseInt(tableHeightNow / 2) + "%";
+  } else if (i > 4 && i < 9) {
+    topPlacement = parseInt(tableHeightNow) + 12.5 + "%";
+  } else if (i > 8 && i < 13) {
+    topPlacement = parseInt(tableHeightNow) + 32.5 + "%";
+  }
+  else if (i > 12 && i < 17) {
+    topPlacement = parseInt(tableHeightNow) + 52.5 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 72.5 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+} else {
+alert("סידור 4 שולחנות בשורה עובד רק כאשר יש בין 1 ל20 שולחנות")
+}
+
+}
+
+function positionTablesThreeInRow() {
+  let tableAmount = tableDivsArray.length
+const divSize = calculateDivSize();
+let valuesWidth = [
+  parseInt(tableWidthNow) + "%",
+  parseInt(tableWidthNow) + 25 + "%",
+  parseInt(tableWidthNow) + 50 + "%",
+];
+
+if(tableAmount > 0 && tableAmount < 4) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let topPlacement = parseInt(tableHeightNow) + 30 + "%";
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.top = topPlacement;
+    tableDivsArray[i].style.left = leftPlacement;
+  }
+}  else if(tableAmount > 3 && tableAmount < 7) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 3) {
+    topPlacement = parseInt(tableHeightNow) + 15 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 35 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+} else if(tableAmount > 6 && tableAmount < 10) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 3) {
+    topPlacement = parseInt(tableHeightNow) + 5 + "%";
+  } else if (i < 6) {
+    topPlacement = parseInt(tableHeightNow) + 25 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 45 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+} else if(tableAmount > 9 && tableAmount < 13) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 3) {
+    topPlacement = parseInt(tableHeightNow) + 5 + "%";
+  } else if (i < 6) {
+    topPlacement = parseInt(tableHeightNow) + 25 + "%";
+  } else if (i < 9){
+    topPlacement = parseInt(tableHeightNow) + 45 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 65 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+} else if(tableAmount > 12 && tableAmount < 16) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 3) {
+    topPlacement = parseInt(tableHeightNow / 2) + 2.5 + "%";
+  } else if (i < 6) {
+    topPlacement = parseInt(tableHeightNow) + 12.5 + "%";
+  } else if (i < 9){
+    topPlacement = parseInt(tableHeightNow) + 27.5 + "%";
+  } else if (i < 12) {
+    topPlacement = parseInt(tableHeightNow) + 42.5 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 57.5 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+}  else {
+alert("סידור 3 שולחנות בשורה עובד רק כאשר יש בין 1 ל15 שולחנות")
+}
+
+}
+
+function positionTablesFiveInRow()
+{
+  let tableAmount = tableDivsArray.length
+const divSize = calculateDivSize();
+let valuesWidth = [
+  parseInt(tableWidthNow / 2) - 2 + "%",
+  parseInt(tableWidthNow) + 8 + "%",
+  parseInt(tableWidthNow) + 26 + "%",
+  parseInt(tableWidthNow) + 44 + "%",
+  parseInt(tableWidthNow) + 62 + "%"
+];
+
+if(tableAmount > 0 && tableAmount < 6) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let topPlacement = parseInt(tableHeightNow) + 30 + "%";
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.top = topPlacement;
+    tableDivsArray[i].style.left = leftPlacement;
+  }
+} else if(tableAmount > 5 && tableAmount < 11) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 5) {
+    topPlacement = parseInt(tableHeightNow) + 15 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 35 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+}  else if(tableAmount > 10 && tableAmount < 16) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 5) {
+    topPlacement = parseInt(tableHeightNow) + 5 + "%";
+  } else if (i < 10) {
+    topPlacement = parseInt(tableHeightNow) + 25 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 45 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+}  else if(tableAmount > 15 && tableAmount < 21) {
+  for(let i=0; i<tableDivsArray.length; i++) 
+  {
+    let leftPlacement = valuesWidth[i % valuesWidth.length];
+    tableDivsArray[i].style.left = leftPlacement;
+
+    if (i < 5) {
+    topPlacement = parseInt(tableHeightNow) + 5 + "%";
+  } else if (i < 10) {
+    topPlacement = parseInt(tableHeightNow) + 25 + "%";
+  } else if (i < 15) {
+    topPlacement = parseInt(tableHeightNow) + 45 + "%";
+  } else {
+    topPlacement = parseInt(tableHeightNow) + 65 + "%";
+  }
+  tableDivsArray[i].style.top = topPlacement;
+  } 
+}  else {
+alert("סידור 5 שולחנות בשורה עובד רק כאשר יש בין 1 ל20 שולחנות")
+}
+
+}
+
+let threeLine = document.getElementById('threeLinePos')
+let threeLineImg = document.getElementById('threeLineImg')
+threeLine.addEventListener("mouseenter" , ()=>{
+  threeLineImg.src="https://i.ibb.co/gWK3x5T/Group-13.png"
+}) 
+threeLine.addEventListener("mouseleave" , ()=>{
+  threeLineImg.src="https://i.ibb.co/HPRGxrK/Group-13-1.png"
+}) 
+
+let fourLine = document.getElementById('fourLinePos')
+let fourLineImg = document.getElementById('fourLineImg')
+fourLine.addEventListener("mouseenter" , ()=>{
+  fourLineImg.src="https://i.ibb.co/xMD9dwy/fourblack.png"
+}) 
+fourLine.addEventListener("mouseleave" , ()=>{
+  fourLineImg.src="https://i.ibb.co/fp0xx2K/fourgrey.png"
+}) 
+
+let fiveLine = document.getElementById('fiveLinePos')
+let fiveLineImg = document.getElementById('fiveLineImg')
+fiveLine.addEventListener("mouseenter" , ()=>{
+  fiveLineImg.src="https://i.ibb.co/MZKH6P0/fiveblack.png"
+}) 
+fiveLine.addEventListener("mouseleave" , ()=>{
+  fiveLineImg.src="https://i.ibb.co/zrJsx0x/fivegrey.png"
+}) 
+
+function lockAll() {
+  let leftLockElements = document.querySelectorAll('.left-lock');
+  let rightLockElements = document.querySelectorAll('.right-lock');
+  let allLockElements = [...leftLockElements, ...rightLockElements];
+  let leftSeats = document.querySelectorAll('.leftSeat');
+  let rightSeats = document.querySelectorAll('.rightSeat');
+  let allSeats = [...leftSeats, ...rightSeats];
+  let elements = document.querySelectorAll('[id^="leftSeatTable"], [id^="rightSeatTable"]');
+
+  lockedTextboxes = [];
+
+  for(let i=0; i<allLockElements.length; i++)
+  {
+    const imgElement = allLockElements[i].querySelector('img');
+  imgElement.src = 'https://i.ibb.co/7x3m9hZ/lock-1.png';
+  allLockElements[i].style.display = "block"
+  lockedTextboxes.push(elements[i].id)
+  allSeats[i].readOnly = true;
+  allSeats[i].style.cursor = "not-allowed"
+  }
+}
+
+function unlockAll()
+{
+  let leftLockElements = document.querySelectorAll('.left-lock');
+  let rightLockElements = document.querySelectorAll('.right-lock');
+  let allLockElements = [...leftLockElements, ...rightLockElements];
+  let leftSeats = document.querySelectorAll('.leftSeat');
+  let rightSeats = document.querySelectorAll('.rightSeat');
+  let allSeats = [...leftSeats, ...rightSeats];
+
+  lockedTextboxes = [];
+
+  for(let i=0; i<allLockElements.length; i++)
+  {
+    const imgElement = allLockElements[i].querySelector('img');
+  imgElement.src = 'https://i.ibb.co/3cDHQ4j/unlocked.png';
+  allLockElements[i].style.display = "none"
+  allSeats[i].readOnly = false;
+  allSeats[i].style.cursor = "text"
+  }
+}
+
+function callErrorStudent(errorStudentName) {
+  
+  let leftOverStudentDiv = document.querySelector('.students-outside');
+        if (leftOverStudentDiv == null) {
+          leftOverStudentDiv = document.createElement("div")
+          leftOverStudentDiv.className = "students-outside"
+          leftOverStudentDiv.innerText = "התלמידים הבאים לא קיבלו כיסא בגלל דרישות מיוחדות בסידור הישיבה - יש להכניס אותם ידנית או לשנות את הדרישות:"
+          let leftOverStudentXbutton = document.createElement("p")
+          leftOverStudentXbutton.className = "x-button-leftover"
+          leftOverStudentXbutton.innerText = "X"
+          leftOverStudentDiv.appendChild(leftOverStudentXbutton)
+
+          leftOverStudentXbutton.addEventListener("click" , ()=>{
+            const studentsOutside = document.querySelector('.students-outside');
+
+            if (studentsOutside) {
+             studentsOutside.parentNode.removeChild(studentsOutside);
+            }
+          })
+
+          document.body.appendChild(leftOverStudentDiv)
+        }
+        let studentSpan = document.createElement("span")
+        const hasSpans = leftOverStudentDiv.querySelector('span') !== null;
+
+        if (hasSpans) {
+         studentSpan.innerText = ", " + errorStudentName
+         leftOverStudentDiv.appendChild(studentSpan)
+         } else {
+          let br = document.createElement("br")
+          leftOverStudentDiv.appendChild(br)
+          studentSpan.innerText = " " + errorStudentName
+          leftOverStudentDiv.appendChild(studentSpan)
+        }
+}
+
+</script>
+
+</body>
+</html>
